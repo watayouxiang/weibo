@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  wbTabBarController.h
 //  weibo
 //
 //  Created by 王涛 on 2016/10/18.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface wbTabBarController : UITabBarController
 
 @end
-

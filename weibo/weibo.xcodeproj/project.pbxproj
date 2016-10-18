@@ -7,25 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BBF001781DB5F6DA0099BD50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF001771DB5F6DA0099BD50 /* main.m */; };
-		BBF0017B1DB5F6DA0099BD50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF0017A1DB5F6DA0099BD50 /* AppDelegate.m */; };
-		BBF0017E1DB5F6DA0099BD50 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF0017D1DB5F6DA0099BD50 /* ViewController.m */; };
-		BBF001811DB5F6DA0099BD50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBF0017F1DB5F6DA0099BD50 /* Main.storyboard */; };
 		BBF001831DB5F6DA0099BD50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBF001821DB5F6DA0099BD50 /* Assets.xcassets */; };
 		BBF001861DB5F6DA0099BD50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBF001841DB5F6DA0099BD50 /* LaunchScreen.storyboard */; };
+		BBF001A81DB5F8ED0099BD50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF001A11DB5F8ED0099BD50 /* AppDelegate.m */; };
+		BBF001A91DB5F8ED0099BD50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF001A31DB5F8ED0099BD50 /* main.m */; };
+		BBF001B01DB5FEC60099BD50 /* wbTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF001AF1DB5FEC60099BD50 /* wbTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BBF001731DB5F6DA0099BD50 /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBF001771DB5F6DA0099BD50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BBF001791DB5F6DA0099BD50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BBF0017A1DB5F6DA0099BD50 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BBF0017C1DB5F6DA0099BD50 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BBF0017D1DB5F6DA0099BD50 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BBF001801DB5F6DA0099BD50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BBF001821DB5F6DA0099BD50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBF001851DB5F6DA0099BD50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBF001871DB5F6DA0099BD50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBF001A01DB5F8ED0099BD50 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BBF001A11DB5F8ED0099BD50 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BBF001A31DB5F8ED0099BD50 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BBF001AE1DB5FEC60099BD50 /* wbTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbTabBarController.h; sourceTree = "<group>"; };
+		BBF001AF1DB5FEC60099BD50 /* wbTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +56,9 @@
 		BBF001751DB5F6DA0099BD50 /* weibo */ = {
 			isa = PBXGroup;
 			children = (
-				BBF001791DB5F6DA0099BD50 /* AppDelegate.h */,
-				BBF0017A1DB5F6DA0099BD50 /* AppDelegate.m */,
-				BBF0017C1DB5F6DA0099BD50 /* ViewController.h */,
-				BBF0017D1DB5F6DA0099BD50 /* ViewController.m */,
-				BBF0017F1DB5F6DA0099BD50 /* Main.storyboard */,
+				BBF0018E1DB5F8ED0099BD50 /* Classes */,
 				BBF001821DB5F6DA0099BD50 /* Assets.xcassets */,
 				BBF001841DB5F6DA0099BD50 /* LaunchScreen.storyboard */,
-				BBF001871DB5F6DA0099BD50 /* Info.plist */,
 				BBF001761DB5F6DA0099BD50 /* Supporting Files */,
 			);
 			path = weibo;
@@ -74,9 +67,197 @@
 		BBF001761DB5F6DA0099BD50 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BBF001771DB5F6DA0099BD50 /* main.m */,
+				BBF001871DB5F6DA0099BD50 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BBF0018E1DB5F8ED0099BD50 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BBF0018F1DB5F8ED0099BD50 /* Discover */,
+				BBF001931DB5F8ED0099BD50 /* Home */,
+				BBF001971DB5F8ED0099BD50 /* Main */,
+				BBF0019B1DB5F8ED0099BD50 /* Message */,
+				BBF0019F1DB5F8ED0099BD50 /* Other */,
+				BBF001A41DB5F8ED0099BD50 /* Profile */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BBF0018F1DB5F8ED0099BD50 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				BBF001901DB5F8ED0099BD50 /* Controller */,
+				BBF001911DB5F8ED0099BD50 /* Model */,
+				BBF001921DB5F8ED0099BD50 /* View */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		BBF001901DB5F8ED0099BD50 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BBF001911DB5F8ED0099BD50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BBF001921DB5F8ED0099BD50 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BBF001931DB5F8ED0099BD50 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BBF001941DB5F8ED0099BD50 /* Controller */,
+				BBF001951DB5F8ED0099BD50 /* Model */,
+				BBF001961DB5F8ED0099BD50 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BBF001941DB5F8ED0099BD50 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BBF001951DB5F8ED0099BD50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BBF001961DB5F8ED0099BD50 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BBF001971DB5F8ED0099BD50 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BBF001981DB5F8ED0099BD50 /* Controller */,
+				BBF001991DB5F8ED0099BD50 /* Model */,
+				BBF0019A1DB5F8ED0099BD50 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BBF001981DB5F8ED0099BD50 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BBF001AE1DB5FEC60099BD50 /* wbTabBarController.h */,
+				BBF001AF1DB5FEC60099BD50 /* wbTabBarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BBF001991DB5F8ED0099BD50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BBF0019A1DB5F8ED0099BD50 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BBF0019B1DB5F8ED0099BD50 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				BBF0019C1DB5F8ED0099BD50 /* Controller */,
+				BBF0019D1DB5F8ED0099BD50 /* Model */,
+				BBF0019E1DB5F8ED0099BD50 /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		BBF0019C1DB5F8ED0099BD50 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BBF0019D1DB5F8ED0099BD50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BBF0019E1DB5F8ED0099BD50 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BBF0019F1DB5F8ED0099BD50 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				BBF001A01DB5F8ED0099BD50 /* AppDelegate.h */,
+				BBF001A11DB5F8ED0099BD50 /* AppDelegate.m */,
+				BBF001A21DB5F8ED0099BD50 /* Category */,
+				BBF001A31DB5F8ED0099BD50 /* main.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		BBF001A21DB5F8ED0099BD50 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		BBF001A41DB5F8ED0099BD50 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				BBF001A51DB5F8ED0099BD50 /* Controller */,
+				BBF001A61DB5F8ED0099BD50 /* Model */,
+				BBF001A71DB5F8ED0099BD50 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		BBF001A51DB5F8ED0099BD50 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BBF001A61DB5F8ED0099BD50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BBF001A71DB5F8ED0099BD50 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +286,7 @@
 		BBF0016B1DB5F6DA0099BD50 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = wb;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = wata;
 				TargetAttributes = {
@@ -139,7 +321,6 @@
 			files = (
 				BBF001861DB5F6DA0099BD50 /* LaunchScreen.storyboard in Resources */,
 				BBF001831DB5F6DA0099BD50 /* Assets.xcassets in Resources */,
-				BBF001811DB5F6DA0099BD50 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,23 +331,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBF0017E1DB5F6DA0099BD50 /* ViewController.m in Sources */,
-				BBF0017B1DB5F6DA0099BD50 /* AppDelegate.m in Sources */,
-				BBF001781DB5F6DA0099BD50 /* main.m in Sources */,
+				BBF001A81DB5F8ED0099BD50 /* AppDelegate.m in Sources */,
+				BBF001A91DB5F8ED0099BD50 /* main.m in Sources */,
+				BBF001B01DB5FEC60099BD50 /* wbTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BBF0017F1DB5F6DA0099BD50 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BBF001801DB5F6DA0099BD50 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BBF001841DB5F6DA0099BD50 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -270,7 +443,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = weibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wata.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -281,7 +456,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = weibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wata.weibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
