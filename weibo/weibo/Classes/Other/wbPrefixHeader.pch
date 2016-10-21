@@ -14,9 +14,9 @@
 #define wbKeyWindow [UIApplication sharedApplication].keyWindow
 
 #ifdef DEBUG
-#define CZLog(...) NSLog(__VA_ARGS__)
+#define wbLog(...) NSLog(__VA_ARGS__)
 #else
-#define CZLog(...)
+#define wbLog(...)
 #endif
 
 

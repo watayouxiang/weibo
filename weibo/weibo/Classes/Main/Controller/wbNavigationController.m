@@ -17,11 +17,11 @@
 #pragma mark - 类初始化的时候调用一次
 + (void)initialize{
     //获取当前类下的tabBarItem
-    UITabBarItem *item = [UITabBarItem appearanceWhenContainedInInstancesOfClasses:[NSArray arrayWithObject:self]];
+   UIBarButtonItem *item = [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:[NSArray arrayWithObject:self]];
     
     NSMutableDictionary *att = [NSMutableDictionary dictionary];
     att[NSForegroundColorAttributeName] = [UIColor orangeColor];
-    [item setTitleTextAttributes:att forState:UIControlStateSelected];
+    [item setTitleTextAttributes:att forState:UIControlStateNormal];
 }
 
 - (void)viewDidLoad {
