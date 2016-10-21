@@ -7,21 +7,98 @@
 //
 
 #import "wbHomeViewController.h"
+#import "UIBarButtonItem+wbItem.h"
 
-@interface wbHomeViewController ()
+#import "wbTitleButton.h"
+#import "wbCover.h"
+#import "wbPopMenu.h"
+
+#import "wbOneViewController.h"
+
+@interface wbHomeViewController ()<wbCoverDelegate>
+
+@property (nonatomic, weak) wbTitleButton *titleButton;
+@property (nonatomic, strong) wbOneViewController *one;
 
 @end
 
 @implementation wbHomeViewController
 
+- (wbOneViewController *)one{
+    if (_one == nil) {
+        _one = [[wbOneViewController alloc] init];
+    }
+    return _one;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setupNavigationBar];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)setupNavigationBar{
+    
+    //leftBarButtonItem
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"navigationbar_friendsearch"] highImage:[UIImage imageNamed:@"navigationbar_friendsearch_highlighted"] target:self action:@selector(friendsearch) forControlEvents:UIControlEventTouchUpInside];
+    
+    //rightBarButtonItem
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"navigationbar_pop"] highImage:[UIImage imageNamed:@"navigationbar_pop_highlighted"] target:self action:@selector(pop) forControlEvents:UIControlEventTouchUpInside];
+    
+    //titleView
+    wbTitleButton *titleButton = [wbTitleButton buttonWithType:UIButtonTypeCustom];
+    self.titleButton = titleButton;
+    
+    [titleButton setTitle:@"首页" forState:UIControlStateNormal];
+    [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateNormal];
+    [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateSelected];
+    
+    titleButton.adjustsImageWhenHighlighted = NO;
+    
+    [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.titleView = titleButton;
+    
+    
+}
+
+-(void)titleClick:(UIButton *)button{
+    NSLog(@"%s", __func__);
+    
+    button.selected = !button.selected;
+    
+    //弹出蒙板
+    wbCover *cover = [wbCover show];
+    cover.delegate = self;
+    
+    
+    //弹出pop菜单
+    CGFloat popW = 200;
+    CGFloat popX = (self.view.width - 200) * 0.5;
+    CGFloat popH = popW;
+    CGFloat popY = 55;
+    wbPopMenu *menu = [wbPopMenu showInRect:CGRectMake(popX, popY, popW, popH)];
+    menu.contentView = self.one.view;
+}
+
+- (void)coverDidClickCover:(wbCover *)cover{
+    [wbPopMenu hide];
+
+    _titleButton.selected = NO;
+}
+
+-(void)friendsearch{
+    NSLog(@"%s", __func__);
+}
+
+-(void)pop{
+    NSLog(@"%s", __func__);
 }
 
 - (void)didReceiveMemoryWarning {

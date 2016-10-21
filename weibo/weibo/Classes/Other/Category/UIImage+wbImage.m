@@ -15,4 +15,10 @@
     return [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
++ (instancetype)imageWithStretchableName:(NSString *)imageName{
+    UIImage *image = [UIImage imageNamed:imageName];
+    //图片的拉伸方式设置：中心点拉伸，类似安卓的点九图
+    return [image stretchableImageWithLeftCapWidth:image.size.width * 0.5 topCapHeight:image.size.height * 0.5];
+}
+
 @end

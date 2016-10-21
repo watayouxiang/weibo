@@ -62,24 +62,20 @@
 #pragma mark - 设置所有子控制器
 -(void)setupAllChildViewController{
     
-    UIViewController *home = [[UIViewController alloc] init];
+    wbHomeViewController *home = [[wbHomeViewController alloc] init];
     [self setupOneChildViewController:home image:[UIImage imageNamed:@"tabbar_home"] selectedImage:[UIImage imageWithOriginalName:@"tabbar_home_selected"] title:@"首页"];
-    home.view.backgroundColor = [UIColor greenColor];
     
     
-    UIViewController *message = [[UIViewController alloc] init];
+    wbMessageViewController *message = [[wbMessageViewController alloc] init];
     [self setupOneChildViewController:message image:[UIImage imageNamed:@"tabbar_message_center"] selectedImage:[UIImage imageWithOriginalName:@"tabbar_message_center_selected"] title:@"消息"];
-    message.view.backgroundColor = [UIColor blueColor];
     
     
-    UIViewController *discover = [[UIViewController alloc] init];
+    wbDiscoverViewController *discover = [[wbDiscoverViewController alloc] init];
     [self setupOneChildViewController:discover image:[UIImage imageNamed:@"tabbar_discover"] selectedImage:[UIImage imageWithOriginalName:@"tabbar_discover_selected"] title:@"发现"];
-    discover.view.backgroundColor = [UIColor purpleColor];
     
     
-    UIViewController *profile = [[UIViewController alloc] init];
+    wbProfileViewController *profile = [[wbProfileViewController alloc] init];
     [self setupOneChildViewController:profile image:[UIImage imageNamed:@"tabbar_profile"] selectedImage:[UIImage imageWithOriginalName:@"tabbar_profile_selected"] title:@"我"];
-    profile.view.backgroundColor = [UIColor lightGrayColor];
     
     
 }
