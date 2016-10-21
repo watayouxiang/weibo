@@ -10,21 +10,26 @@
 #import "UIImage+wbImage.h"
 #import "wbTabBar.h"
 
-@interface wbTabBarController ()
+#import "wbHomeViewController.h"
+#import "wbProfileViewController.h"
+#import "wbDiscoverViewController.h"
+#import "wbMessageViewController.h"
+
+#import "wbNavigationController.h"
+
+@interface wbTabBarController ()<wbTabBarDelegate>
+
+@property (nonatomic, strong) NSMutableArray *items;
 
 @end
 
 @implementation wbTabBarController
 
-#pragma mark - 类初始化的时候调用一次
-+ (void)initialize{
-    //获取当前类下的所有tabBarItem
-    UITabBarItem *item = [UITabBarItem appearanceWhenContainedInInstancesOfClasses:[NSArray arrayWithObject:self]];
-    
-    NSMutableDictionary *att = [NSMutableDictionary dictionary];
-    att[NSForegroundColorAttributeName] = [UIColor orangeColor];
-    
-    [item setTitleTextAttributes:att forState:UIControlStateSelected];
+-(NSMutableArray *)items{
+    if (_items == nil) {
+        _items = [NSMutableArray array];
+    }
+    return _items;
 }
 
 - (void)viewDidLoad {
@@ -32,14 +37,29 @@
     
     [self setupAllChildViewController];
     
-    //自定义tabBar
-    wbTabBar *tabBar = [[wbTabBar alloc] initWithFrame:self.tabBar.frame];
-    //利用KVC修改readOnly属性
-    [self setValue:tabBar forKey:@"tabBar"];
+    [self setupTabBar];
     
 }
 
-#pragma mark - 初始化子控制器
+#pragma mark - 设置自定义tabBar
+-(void)setupTabBar{
+    //自定义tabBar
+    wbTabBar *tabBar = [[wbTabBar alloc] initWithFrame:self.tabBar.frame];
+    
+    tabBar.backgroundColor = [UIColor whiteColor];
+    tabBar.delegate = self;
+    tabBar.items = self.items;
+    
+    [self.view addSubview:tabBar];
+    [self.tabBar removeFromSuperview];
+}
+
+#pragma mark - 点击tabBar上的tabBarItem时调用
+- (void)tabBar:(wbTabBar *)tabBar didClickButton:(NSInteger)index{
+    self.selectedIndex = index;
+}
+
+#pragma mark - 设置所有子控制器
 -(void)setupAllChildViewController{
     
     UIViewController *home = [[UIViewController alloc] init];
@@ -67,12 +87,18 @@
 #pragma mark - 添加一个子控制器
 -(void)setupOneChildViewController:(UIViewController *)vc image:(UIImage *)image selectedImage:(UIImage *)selectedImage title:(NSString *)title{
     
+    //vc.title = title;//代表了：vc.navigationItem.title = title; vc.tabBarItem.title = title;
+    vc.navigationItem.title = title;
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = image;
     vc.tabBarItem.selectedImage = selectedImage;
     vc.tabBarItem.badgeValue = @"10";
     
-    [self addChildViewController:vc];
+    [self.items addObject:vc.tabBarItem];
+    
+    wbNavigationController *nav = [[wbNavigationController alloc] initWithRootViewController:vc];
+    
+    [self addChildViewController:nav];
     
 }
 

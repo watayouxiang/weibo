@@ -1,0 +1,26 @@
+//
+//  wbPrefixHeader.pch
+//  weibo
+//
+//  Created by 王涛 on 2016/10/20.
+//  Copyright © 2016年 wata. All rights reserved.
+//
+
+#ifdef __OBJC__
+
+#import "UIView+wbFrame.h"
+#import "UIImage+wbImage.h"
+
+#define wbKeyWindow [UIApplication sharedApplication].keyWindow
+
+#ifdef DEBUG
+#define CZLog(...) NSLog(__VA_ARGS__)
+#else
+#define CZLog(...)
+#endif
+
+
+
+
+
+#endif

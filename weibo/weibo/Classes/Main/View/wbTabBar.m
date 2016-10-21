@@ -7,17 +7,61 @@
 //
 
 #import "wbTabBar.h"
+#import "wbTabBarButton.h"
 
 @interface wbTabBar ()
 
 @property (nonatomic, weak) UIButton *plusButton;
+@property (nonatomic, strong) NSMutableArray *buttons;
+@property (nonatomic, weak) UIButton *selectedButton;
 
 @end
 
 @implementation wbTabBar
 
+-(NSMutableArray *)buttons{
+    if (_buttons == nil) {
+        _buttons = [NSMutableArray array];
+    }
+    return _buttons;
+}
+
+-(void)setItems:(NSArray *)items{
+    _items = items;
+    
+    for (UITabBarItem *item in _items) {
+        wbTabBarButton *btn = [wbTabBarButton buttonWithType:UIButtonTypeCustom];
+        btn.item = item;
+        btn.tag = self.buttons.count;
+        [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchDown];
+        
+        //默认选中第一个UITabBarItem
+        if (btn.tag == 0) {
+            [self btnClick:btn];
+        }
+        
+        [self addSubview:btn];
+        
+        [self.buttons addObject:btn];
+    }
+    
+}
+
+#pragma mark - 选中UITabBarItem时调用
+-(void)btnClick:(UIButton *)button{
+    _selectedButton.selected = NO;
+    button.selected = YES;
+    _selectedButton = button;
+    
+    //通知tabBarViewController切换控制器
+    if ([_delegate respondsToSelector:@selector(tabBar:didClickButton:)]) {
+        [_delegate tabBar:self didClickButton:button.tag];
+    }
+}
+
 -(UIButton *)plusButton{
     if (_plusButton == nil) {
+        
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setImage:[UIImage imageNamed:@"tabbar_compose_icon_add"] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:@"tabbar_compose_background_icon_add"] forState:UIControlStateHighlighted];
@@ -35,6 +79,7 @@
     return _plusButton;
 }
 
+#pragma mark - 布局子控件
 -(void)layoutSubviews{
     [super layoutSubviews];
     
@@ -48,20 +93,15 @@
     
     int i = 0;
     for (UIView *tabBarButton in self.subviews) {
-        //判断是否是tabBarButton类型
-        if ([tabBarButton isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
-            if (i == 2) {
-                i = 3;
-            }
-            btnX = i * btnW;
-            tabBarButton.frame = CGRectMake(btnX, btnY, btnW, btnH);
-            i++;
+        if (i == 2) {
+            i = 3;
         }
+        btnX = i * btnW;
+        tabBarButton.frame = CGRectMake(btnX, btnY, btnW, btnH);
+        i++;
     }
     
     self.plusButton.center = CGPointMake(w * 0.5, h * 0.5);
-    
-    
 }
 
 @end

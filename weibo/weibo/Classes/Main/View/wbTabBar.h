@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface wbTabBar : UITabBar
+@class wbTabBar;
+
+@protocol wbTabBarDelegate <NSObject>
+
+@optional
+-(void)tabBar:(wbTabBar *)tabBar didClickButton:(NSInteger)index;
+
+@end
+
+@interface wbTabBar : UIView
+
+@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, weak) id<wbTabBarDelegate> delegate;
 
 @end
