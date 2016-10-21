@@ -20,6 +20,7 @@
 		BBE38CCA1DB9BC7300BB4F35 /* wbCover.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE38CC91DB9BC7300BB4F35 /* wbCover.m */; };
 		BBE38CCD1DB9C06800BB4F35 /* wbPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE38CCC1DB9C06800BB4F35 /* wbPopMenu.m */; };
 		BBE38CD01DB9C1E700BB4F35 /* wbOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE38CCF1DB9C1E700BB4F35 /* wbOneViewController.m */; };
+		BBE38CD31DBA1AF700BB4F35 /* wbSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE38CD21DBA1AF700BB4F35 /* wbSearchBar.m */; };
 		BBF001831DB5F6DA0099BD50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBF001821DB5F6DA0099BD50 /* Assets.xcassets */; };
 		BBF001861DB5F6DA0099BD50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBF001841DB5F6DA0099BD50 /* LaunchScreen.storyboard */; };
 		BBF001A81DB5F8ED0099BD50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF001A11DB5F8ED0099BD50 /* AppDelegate.m */; };
@@ -58,6 +59,8 @@
 		BBE38CCC1DB9C06800BB4F35 /* wbPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbPopMenu.m; sourceTree = "<group>"; };
 		BBE38CCE1DB9C1E700BB4F35 /* wbOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbOneViewController.h; sourceTree = "<group>"; };
 		BBE38CCF1DB9C1E700BB4F35 /* wbOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbOneViewController.m; sourceTree = "<group>"; };
+		BBE38CD11DBA1AF700BB4F35 /* wbSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbSearchBar.h; sourceTree = "<group>"; };
+		BBE38CD21DBA1AF700BB4F35 /* wbSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbSearchBar.m; sourceTree = "<group>"; };
 		BBF001731DB5F6DA0099BD50 /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBF001821DB5F6DA0099BD50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBF001851DB5F6DA0099BD50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 		BBF001921DB5F8ED0099BD50 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BBE38CD11DBA1AF700BB4F35 /* wbSearchBar.h */,
+				BBE38CD21DBA1AF700BB4F35 /* wbSearchBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -437,6 +442,7 @@
 				BBE38CCD1DB9C06800BB4F35 /* wbPopMenu.m in Sources */,
 				BBE38CC71DB9B84A00BB4F35 /* wbTitleButton.m in Sources */,
 				BBE38CBA1DB8AD4200BB4F35 /* wbBadgeView.m in Sources */,
+				BBE38CD31DBA1AF700BB4F35 /* wbSearchBar.m in Sources */,
 				BBE38CBD1DB8AFA700BB4F35 /* UIView+wbFrame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
