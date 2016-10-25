@@ -9,7 +9,9 @@
 #import "wbNavigationController.h"
 #import "UIBarButtonItem+wbItem.h"
 
-@interface wbNavigationController ()
+@interface wbNavigationController ()<UINavigationControllerDelegate>
+
+@property (nonatomic, strong) id popDelegate;
 
 @end
 
@@ -27,7 +29,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _popDelegate = self.interactivePopGestureRecognizer.delegate;
+    self.delegate = self;
 
+}
+
+-(void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+    if (viewController == self.viewControllers[0]) {
+        //如果是根控制器，就要把滑动返回代理还原
+        self.interactivePopGestureRecognizer.delegate = _popDelegate;
+    }else{
+        //如果不是根控制器，就把滑动返回代理清空，滑动返回功能就会恢复
+        self.interactivePopGestureRecognizer.delegate = nil;
+    }
+    
 }
 
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
