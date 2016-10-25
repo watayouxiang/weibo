@@ -35,6 +35,19 @@
 
 }
 
+#pragma mark - 导航控制器即将显示新的控制器的时候调用
+-(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    UITabBarController *tabBarVc = (UITabBarController *)keyWindow.rootViewController;
+    for (UIView *tabBarButton in tabBarVc.tabBar.subviews) {
+        if ([tabBarButton isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+            [tabBarButton removeFromSuperview];
+        }
+    }
+}
+
+#pragma mark - 导航控制器显示完成新的控制器的时候调用
 -(void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
     
     if (viewController == self.viewControllers[0]) {
