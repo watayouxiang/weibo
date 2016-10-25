@@ -14,6 +14,7 @@
 #import "wbPopMenu.h"
 
 #import "wbOneViewController.h"
+#import "wbViewController_One.h"
 
 @interface wbHomeViewController ()<wbCoverDelegate>
 
@@ -99,6 +100,11 @@
 
 -(void)pop{
     NSLog(@"%s", __func__);
+    
+    wbViewController_One *one = [[wbViewController_One alloc] init];
+    one.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:one animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {

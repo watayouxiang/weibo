@@ -7,6 +7,7 @@
 //
 
 #import "wbNavigationController.h"
+#import "UIBarButtonItem+wbItem.h"
 
 @interface wbNavigationController ()
 
@@ -26,7 +27,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+}
+
+-(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+    //设置非根控制器的导航栏
+    if (self.viewControllers.count != 0) {
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"navigationbar_back"] highImage:[UIImage imageNamed:@"navigationbar_back_highlighted"] target:self action:@selector(backToPre) forControlEvents:UIControlEventTouchUpInside];
+        
+        viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"navigationbar_more"] highImage:[UIImage imageNamed:@"navigationbar_more_highlighted"] target:self action:@selector(backToRoot) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    [super pushViewController:viewController animated:animated];
+}
+
+-(void)backToRoot{
+    [self popToRootViewControllerAnimated:YES];
+}
+
+-(void)backToPre{
+    [self popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,14 +55,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

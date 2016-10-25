@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB5E371B1DBF34B600AA2667 /* wbViewController_Two.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5E37191DBF34B600AA2667 /* wbViewController_Two.m */; };
+		BB5E371C1DBF34B600AA2667 /* wbViewController_Two.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5E371A1DBF34B600AA2667 /* wbViewController_Two.xib */; };
 		BBE38CAB1DB8970800BB4F35 /* wbNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE38CAA1DB8970800BB4F35 /* wbNavigationController.m */; };
 		BBE38CAE1DB897F900BB4F35 /* wbHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE38CAD1DB897F900BB4F35 /* wbHomeViewController.m */; };
 		BBE38CB11DB8981700BB4F35 /* wbDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE38CB01DB8981700BB4F35 /* wbDiscoverViewController.m */; };
@@ -29,9 +31,14 @@
 		BBF001B31DB603E60099BD50 /* UIImage+wbImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF001B21DB603E60099BD50 /* UIImage+wbImage.m */; };
 		BBF001B61DB6051D0099BD50 /* wbTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF001B51DB6051D0099BD50 /* wbTabBar.m */; };
 		BBF001B91DB60B720099BD50 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF001B81DB60B720099BD50 /* UIKit.framework */; };
+		BBF7DD771DBEFFFE00AE7EF0 /* wbViewController_One.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF7DD751DBEFFFE00AE7EF0 /* wbViewController_One.m */; };
+		BBF7DD781DBEFFFE00AE7EF0 /* wbViewController_One.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF7DD761DBEFFFE00AE7EF0 /* wbViewController_One.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB5E37181DBF34B600AA2667 /* wbViewController_Two.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbViewController_Two.h; sourceTree = "<group>"; };
+		BB5E37191DBF34B600AA2667 /* wbViewController_Two.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbViewController_Two.m; sourceTree = "<group>"; };
+		BB5E371A1DBF34B600AA2667 /* wbViewController_Two.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = wbViewController_Two.xib; sourceTree = "<group>"; };
 		BBE38CA91DB8970800BB4F35 /* wbNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbNavigationController.h; sourceTree = "<group>"; };
 		BBE38CAA1DB8970800BB4F35 /* wbNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbNavigationController.m; sourceTree = "<group>"; };
 		BBE38CAC1DB897F900BB4F35 /* wbHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbHomeViewController.h; sourceTree = "<group>"; };
@@ -75,6 +82,9 @@
 		BBF001B41DB6051D0099BD50 /* wbTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbTabBar.h; sourceTree = "<group>"; };
 		BBF001B51DB6051D0099BD50 /* wbTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbTabBar.m; sourceTree = "<group>"; };
 		BBF001B81DB60B720099BD50 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BBF7DD741DBEFFFE00AE7EF0 /* wbViewController_One.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbViewController_One.h; sourceTree = "<group>"; };
+		BBF7DD751DBEFFFE00AE7EF0 /* wbViewController_One.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbViewController_One.m; sourceTree = "<group>"; };
+		BBF7DD761DBEFFFE00AE7EF0 /* wbViewController_One.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = wbViewController_One.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +200,12 @@
 				BBE38CAD1DB897F900BB4F35 /* wbHomeViewController.m */,
 				BBE38CCE1DB9C1E700BB4F35 /* wbOneViewController.h */,
 				BBE38CCF1DB9C1E700BB4F35 /* wbOneViewController.m */,
+				BBF7DD741DBEFFFE00AE7EF0 /* wbViewController_One.h */,
+				BBF7DD751DBEFFFE00AE7EF0 /* wbViewController_One.m */,
+				BBF7DD761DBEFFFE00AE7EF0 /* wbViewController_One.xib */,
+				BB5E37181DBF34B600AA2667 /* wbViewController_Two.h */,
+				BB5E37191DBF34B600AA2667 /* wbViewController_Two.m */,
+				BB5E371A1DBF34B600AA2667 /* wbViewController_Two.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -415,6 +431,8 @@
 			files = (
 				BBF001861DB5F6DA0099BD50 /* LaunchScreen.storyboard in Resources */,
 				BBF001831DB5F6DA0099BD50 /* Assets.xcassets in Resources */,
+				BB5E371C1DBF34B600AA2667 /* wbViewController_Two.xib in Resources */,
+				BBF7DD781DBEFFFE00AE7EF0 /* wbViewController_One.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +457,9 @@
 				BBE38CC41DB9B60700BB4F35 /* UIBarButtonItem+wbItem.m in Sources */,
 				BBE38CC11DB8BD5500BB4F35 /* wbTabBarButton.m in Sources */,
 				BBE38CCA1DB9BC7300BB4F35 /* wbCover.m in Sources */,
+				BBF7DD771DBEFFFE00AE7EF0 /* wbViewController_One.m in Sources */,
 				BBE38CCD1DB9C06800BB4F35 /* wbPopMenu.m in Sources */,
+				BB5E371B1DBF34B600AA2667 /* wbViewController_Two.m in Sources */,
 				BBE38CC71DB9B84A00BB4F35 /* wbTitleButton.m in Sources */,
 				BBE38CBA1DB8AD4200BB4F35 /* wbBadgeView.m in Sources */,
 				BBE38CD31DBA1AF700BB4F35 /* wbSearchBar.m in Sources */,

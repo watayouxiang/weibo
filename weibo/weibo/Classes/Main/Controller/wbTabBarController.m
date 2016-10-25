@@ -44,14 +44,24 @@
 #pragma mark - 设置自定义tabBar
 -(void)setupTabBar{
     //自定义tabBar
-    wbTabBar *tabBar = [[wbTabBar alloc] initWithFrame:self.tabBar.frame];
+    wbTabBar *tabBar = [[wbTabBar alloc] initWithFrame:self.tabBar.bounds];
     
     tabBar.backgroundColor = [UIColor whiteColor];
     tabBar.delegate = self;
     tabBar.items = self.items;
     
-    [self.view addSubview:tabBar];
-    [self.tabBar removeFromSuperview];
+    [self.tabBar addSubview:tabBar];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    //移除系统的tabBar
+    for (UIView *tabBarButton in self.tabBar.subviews) {
+        if ([tabBarButton isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+            [tabBarButton removeFromSuperview];
+        }
+    }
 }
 
 #pragma mark - 点击tabBar上的tabBarItem时调用
