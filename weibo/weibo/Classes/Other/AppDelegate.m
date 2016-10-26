@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "wbTabBarController.h"
+#import "wbNewFeatureController.h"
+
+#define wbVersionKey @"version"
 
 @interface AppDelegate ()
 
@@ -20,8 +23,20 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    wbTabBarController *tabBarVc = [[wbTabBarController alloc] init];
-    self.window.rootViewController = tabBarVc;
+    
+    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
+    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:wbVersionKey];
+    
+    if ([currentVersion isEqualToString:lastVersion]) {
+        wbTabBarController *tabBarVc = [[wbTabBarController alloc] init];
+        self.window.rootViewController = tabBarVc;
+    }else{
+        wbNewFeatureController *newFeatureVc = [[wbNewFeatureController alloc] init];
+        self.window.rootViewController = newFeatureVc;
+
+        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:wbVersionKey];
+    }
+    
     [self.window makeKeyAndVisible];
     
     return YES;

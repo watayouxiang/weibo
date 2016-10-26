@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BB5E371B1DBF34B600AA2667 /* wbViewController_Two.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5E37191DBF34B600AA2667 /* wbViewController_Two.m */; };
 		BB5E371C1DBF34B600AA2667 /* wbViewController_Two.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5E371A1DBF34B600AA2667 /* wbViewController_Two.xib */; };
+		BB79A6EA1DC079FD00E3072D /* wbNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79A6E51DC079FD00E3072D /* wbNewFeatureController.m */; };
+		BB79A6EB1DC079FD00E3072D /* wbNewFeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79A6E91DC079FD00E3072D /* wbNewFeatureCell.m */; };
 		BBE38CAB1DB8970800BB4F35 /* wbNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE38CAA1DB8970800BB4F35 /* wbNavigationController.m */; };
 		BBE38CAE1DB897F900BB4F35 /* wbHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE38CAD1DB897F900BB4F35 /* wbHomeViewController.m */; };
 		BBE38CB11DB8981700BB4F35 /* wbDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE38CB01DB8981700BB4F35 /* wbDiscoverViewController.m */; };
@@ -39,6 +41,10 @@
 		BB5E37181DBF34B600AA2667 /* wbViewController_Two.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbViewController_Two.h; sourceTree = "<group>"; };
 		BB5E37191DBF34B600AA2667 /* wbViewController_Two.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbViewController_Two.m; sourceTree = "<group>"; };
 		BB5E371A1DBF34B600AA2667 /* wbViewController_Two.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = wbViewController_Two.xib; sourceTree = "<group>"; };
+		BB79A6E41DC079FD00E3072D /* wbNewFeatureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbNewFeatureController.h; sourceTree = "<group>"; };
+		BB79A6E51DC079FD00E3072D /* wbNewFeatureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbNewFeatureController.m; sourceTree = "<group>"; };
+		BB79A6E81DC079FD00E3072D /* wbNewFeatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbNewFeatureCell.h; sourceTree = "<group>"; };
+		BB79A6E91DC079FD00E3072D /* wbNewFeatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbNewFeatureCell.m; sourceTree = "<group>"; };
 		BBE38CA91DB8970800BB4F35 /* wbNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbNavigationController.h; sourceTree = "<group>"; };
 		BBE38CAA1DB8970800BB4F35 /* wbNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbNavigationController.m; sourceTree = "<group>"; };
 		BBE38CAC1DB897F900BB4F35 /* wbHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbHomeViewController.h; sourceTree = "<group>"; };
@@ -99,6 +105,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB79A6E21DC079FD00E3072D /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				BB79A6E31DC079FD00E3072D /* Controller */,
+				BB79A6E61DC079FD00E3072D /* Model */,
+				BB79A6E71DC079FD00E3072D /* View */,
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		BB79A6E31DC079FD00E3072D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BB79A6E41DC079FD00E3072D /* wbNewFeatureController.h */,
+				BB79A6E51DC079FD00E3072D /* wbNewFeatureController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BB79A6E61DC079FD00E3072D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB79A6E71DC079FD00E3072D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB79A6E81DC079FD00E3072D /* wbNewFeatureCell.h */,
+				BB79A6E91DC079FD00E3072D /* wbNewFeatureCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BBF0016A1DB5F6DA0099BD50 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +179,7 @@
 		BBF0018E1DB5F8ED0099BD50 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BB79A6E21DC079FD00E3072D /* NewFeature */,
 				BBF0018F1DB5F8ED0099BD50 /* Discover */,
 				BBF001931DB5F8ED0099BD50 /* Home */,
 				BBF001971DB5F8ED0099BD50 /* Main */,
@@ -451,6 +493,8 @@
 				BBF001B61DB6051D0099BD50 /* wbTabBar.m in Sources */,
 				BBE38CB11DB8981700BB4F35 /* wbDiscoverViewController.m in Sources */,
 				BBE38CAB1DB8970800BB4F35 /* wbNavigationController.m in Sources */,
+				BB79A6EB1DC079FD00E3072D /* wbNewFeatureCell.m in Sources */,
+				BB79A6EA1DC079FD00E3072D /* wbNewFeatureController.m in Sources */,
 				BBE38CD01DB9C1E700BB4F35 /* wbOneViewController.m in Sources */,
 				BBE38CAE1DB897F900BB4F35 /* wbHomeViewController.m in Sources */,
 				BBF001B01DB5FEC60099BD50 /* wbTabBarController.m in Sources */,
