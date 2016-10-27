@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "wbTabBarController.h"
 #import "wbNewFeatureController.h"
+#import "wbOAuthViewController.h"
 
 #define wbVersionKey @"version"
 
@@ -24,6 +25,16 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
+    wbOAuthViewController *oauthVc = [[wbOAuthViewController alloc] init];
+    self.window.rootViewController = oauthVc;
+    
+    [self.window makeKeyAndVisible];
+    
+    return YES;
+}
+
+//选择根控制器
+-(void)chooseRootViewController{
     NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
     NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:wbVersionKey];
     
@@ -33,15 +44,10 @@
     }else{
         wbNewFeatureController *newFeatureVc = [[wbNewFeatureController alloc] init];
         self.window.rootViewController = newFeatureVc;
-
+        
         [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:wbVersionKey];
     }
-    
-    [self.window makeKeyAndVisible];
-    
-    return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

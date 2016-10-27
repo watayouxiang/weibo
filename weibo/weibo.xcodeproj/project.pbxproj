@@ -25,6 +25,7 @@
 		BBE38CCD1DB9C06800BB4F35 /* wbPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE38CCC1DB9C06800BB4F35 /* wbPopMenu.m */; };
 		BBE38CD01DB9C1E700BB4F35 /* wbOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE38CCF1DB9C1E700BB4F35 /* wbOneViewController.m */; };
 		BBE38CD31DBA1AF700BB4F35 /* wbSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE38CD21DBA1AF700BB4F35 /* wbSearchBar.m */; };
+		BBE637E81DC191EF009C0CDC /* wbOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE637E71DC191EF009C0CDC /* wbOAuthViewController.m */; };
 		BBF001831DB5F6DA0099BD50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBF001821DB5F6DA0099BD50 /* Assets.xcassets */; };
 		BBF001861DB5F6DA0099BD50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBF001841DB5F6DA0099BD50 /* LaunchScreen.storyboard */; };
 		BBF001A81DB5F8ED0099BD50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF001A11DB5F8ED0099BD50 /* AppDelegate.m */; };
@@ -74,6 +75,8 @@
 		BBE38CCF1DB9C1E700BB4F35 /* wbOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbOneViewController.m; sourceTree = "<group>"; };
 		BBE38CD11DBA1AF700BB4F35 /* wbSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbSearchBar.h; sourceTree = "<group>"; };
 		BBE38CD21DBA1AF700BB4F35 /* wbSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbSearchBar.m; sourceTree = "<group>"; };
+		BBE637E61DC191EF009C0CDC /* wbOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbOAuthViewController.h; sourceTree = "<group>"; };
+		BBE637E71DC191EF009C0CDC /* wbOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbOAuthViewController.m; sourceTree = "<group>"; };
 		BBF001731DB5F6DA0099BD50 /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBF001821DB5F6DA0099BD50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBF001851DB5F6DA0099BD50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -140,6 +143,39 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BBE637E21DC191CC009C0CDC /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				BBE637E31DC191CC009C0CDC /* Controller */,
+				BBE637E41DC191CC009C0CDC /* Model */,
+				BBE637E51DC191CC009C0CDC /* View */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		BBE637E31DC191CC009C0CDC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BBE637E61DC191EF009C0CDC /* wbOAuthViewController.h */,
+				BBE637E71DC191EF009C0CDC /* wbOAuthViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BBE637E41DC191CC009C0CDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BBE637E51DC191CC009C0CDC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BBF0016A1DB5F6DA0099BD50 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +215,7 @@
 		BBF0018E1DB5F8ED0099BD50 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BBE637E21DC191CC009C0CDC /* OAuth */,
 				BB79A6E21DC079FD00E3072D /* NewFeature */,
 				BBF0018F1DB5F8ED0099BD50 /* Discover */,
 				BBF001931DB5F8ED0099BD50 /* Home */,
@@ -496,6 +533,7 @@
 				BB79A6EB1DC079FD00E3072D /* wbNewFeatureCell.m in Sources */,
 				BB79A6EA1DC079FD00E3072D /* wbNewFeatureController.m in Sources */,
 				BBE38CD01DB9C1E700BB4F35 /* wbOneViewController.m in Sources */,
+				BBE637E81DC191EF009C0CDC /* wbOAuthViewController.m in Sources */,
 				BBE38CAE1DB897F900BB4F35 /* wbHomeViewController.m in Sources */,
 				BBF001B01DB5FEC60099BD50 /* wbTabBarController.m in Sources */,
 				BBE38CC41DB9B60700BB4F35 /* UIBarButtonItem+wbItem.m in Sources */,
