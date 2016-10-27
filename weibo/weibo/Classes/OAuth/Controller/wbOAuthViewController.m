@@ -7,6 +7,7 @@
 //
 
 #import "wbOAuthViewController.h"
+#import "MBProgressHUD+MJ.h"
 
 @interface wbOAuthViewController ()<UIWebViewDelegate>
 
@@ -33,7 +34,7 @@
 
 #pragma mark - webView代理
 -(void)webViewDidStartLoad:(UIWebView *)webView{
-
+    [MBProgressHUD showMessage:@"正在加载中..."];
 }
 
 - (void)didReceiveMemoryWarning {
