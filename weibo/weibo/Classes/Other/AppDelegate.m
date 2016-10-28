@@ -7,11 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "wbTabBarController.h"
-#import "wbNewFeatureController.h"
 #import "wbOAuthViewController.h"
-
-#define wbVersionKey @"version"
+#import "wbAccountTool.h"
+#import "wbRootTool.h"
 
 @interface AppDelegate ()
 
@@ -25,28 +23,17 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    wbOAuthViewController *oauthVc = [[wbOAuthViewController alloc] init];
-    self.window.rootViewController = oauthVc;
-    
+    //判断是否有授权
+    if ([wbAccountTool account]) {//有授权：进入新特性页面或者主页面
+        [wbRootTool chooseRootViewController:self.window];
+    }else{//没有授权：进行授权操作
+        wbOAuthViewController *oauthVc = [[wbOAuthViewController alloc] init];
+        self.window.rootViewController = oauthVc;
+    }
+
     [self.window makeKeyAndVisible];
     
     return YES;
-}
-
-//选择根控制器
--(void)chooseRootViewController{
-    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
-    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:wbVersionKey];
-    
-    if ([currentVersion isEqualToString:lastVersion]) {
-        wbTabBarController *tabBarVc = [[wbTabBarController alloc] init];
-        self.window.rootViewController = tabBarVc;
-    }else{
-        wbNewFeatureController *newFeatureVc = [[wbNewFeatureController alloc] init];
-        self.window.rootViewController = newFeatureVc;
-        
-        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:wbVersionKey];
-    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
