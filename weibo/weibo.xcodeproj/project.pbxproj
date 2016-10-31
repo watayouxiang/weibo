@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		305946AABDB5BCED936CF83A /* libPods-weibo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E2AB5EA4C28C077D1C4925D /* libPods-weibo.a */; };
+		BB1671D91DC722EF00455648 /* wbStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1671D81DC722EF00455648 /* wbStatus.m */; };
+		BB1671DC1DC7230500455648 /* wbUser.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1671DB1DC7230500455648 /* wbUser.m */; };
+		BB1671DF1DC7230F00455648 /* wbPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1671DE1DC7230F00455648 /* wbPhoto.m */; };
 		BB4C7CD21DC2014000FCDEDA /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C7C771DC2014000FCDEDA /* AFHTTPRequestOperation.m */; };
 		BB4C7CD31DC2014000FCDEDA /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C7C791DC2014000FCDEDA /* AFHTTPRequestOperationManager.m */; };
 		BB4C7CD41DC2014000FCDEDA /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C7C7B1DC2014000FCDEDA /* AFHTTPSessionManager.m */; };
@@ -89,6 +92,12 @@
 		1E2AB5EA4C28C077D1C4925D /* libPods-weibo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weibo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DCC574F5467D727EB917A0 /* Pods-weibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-weibo/Pods-weibo.release.xcconfig"; sourceTree = "<group>"; };
 		AC8A3D61E800337767193188 /* Pods-weibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weibo/Pods-weibo.debug.xcconfig"; sourceTree = "<group>"; };
+		BB1671D71DC722EF00455648 /* wbStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbStatus.h; sourceTree = "<group>"; };
+		BB1671D81DC722EF00455648 /* wbStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbStatus.m; sourceTree = "<group>"; };
+		BB1671DA1DC7230500455648 /* wbUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbUser.h; sourceTree = "<group>"; };
+		BB1671DB1DC7230500455648 /* wbUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbUser.m; sourceTree = "<group>"; };
+		BB1671DD1DC7230F00455648 /* wbPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbPhoto.h; sourceTree = "<group>"; };
+		BB1671DE1DC7230F00455648 /* wbPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbPhoto.m; sourceTree = "<group>"; };
 		BB4C7C761DC2014000FCDEDA /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		BB4C7C771DC2014000FCDEDA /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		BB4C7C781DC2014000FCDEDA /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -260,6 +269,19 @@
 				63DCC574F5467D727EB917A0 /* Pods-weibo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB1671D61DC722E000455648 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB1671D71DC722EF00455648 /* wbStatus.h */,
+				BB1671D81DC722EF00455648 /* wbStatus.m */,
+				BB1671DA1DC7230500455648 /* wbUser.h */,
+				BB1671DB1DC7230500455648 /* wbUser.m */,
+				BB1671DD1DC7230F00455648 /* wbPhoto.h */,
+				BB1671DE1DC7230F00455648 /* wbPhoto.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BB4C7C741DC2014000FCDEDA /* Lib */ = {
@@ -585,8 +607,8 @@
 		BBF001931DB5F8ED0099BD50 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BB1671D61DC722E000455648 /* Model */,
 				BBF001941DB5F8ED0099BD50 /* Controller */,
-				BBF001951DB5F8ED0099BD50 /* Model */,
 				BBF001961DB5F8ED0099BD50 /* View */,
 			);
 			path = Home;
@@ -607,13 +629,6 @@
 				BB5E371A1DBF34B600AA2667 /* wbViewController_Two.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		BBF001951DB5F8ED0099BD50 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		BBF001961DB5F8ED0099BD50 /* View */ = {
@@ -909,6 +924,7 @@
 				BBE38CB41DB8982C00BB4F35 /* wbMessageViewController.m in Sources */,
 				BB4C7CD71DC2014000FCDEDA /* AFURLConnectionOperation.m in Sources */,
 				BB4C7CE71DC2014000FCDEDA /* MJRefreshConst.m in Sources */,
+				BB1671DF1DC7230F00455648 /* wbPhoto.m in Sources */,
 				BBF001A91DB5F8ED0099BD50 /* main.m in Sources */,
 				BBF001B61DB6051D0099BD50 /* wbTabBar.m in Sources */,
 				BB4C7CE41DC2014000FCDEDA /* NSObject+MJKeyValue.m in Sources */,
@@ -928,6 +944,7 @@
 				BB4C7CFC1DC2014000FCDEDA /* UIView+WebCacheOperation.m in Sources */,
 				BB4C7CD51DC2014000FCDEDA /* AFNetworkReachabilityManager.m in Sources */,
 				BB4C7CE11DC2014000FCDEDA /* MJType.m in Sources */,
+				BB1671D91DC722EF00455648 /* wbStatus.m in Sources */,
 				BB4C7CEF1DC2014000FCDEDA /* SDImageCache.m in Sources */,
 				BB4C7CED1DC2014000FCDEDA /* MKAnnotationView+WebCache.m in Sources */,
 				BBE38CD01DB9C1E700BB4F35 /* wbOneViewController.m in Sources */,
@@ -949,6 +966,7 @@
 				BB4C7CE91DC2014000FCDEDA /* MJRefreshHeaderView.m in Sources */,
 				BB4C7CF91DC2014000FCDEDA /* UIImage+WebP.m in Sources */,
 				BB4C7CD61DC2014000FCDEDA /* AFSecurityPolicy.m in Sources */,
+				BB1671DC1DC7230500455648 /* wbUser.m in Sources */,
 				BB4C7CD31DC2014000FCDEDA /* AFHTTPRequestOperationManager.m in Sources */,
 				BB4C7CEC1DC2014000FCDEDA /* UIView+MJExtension.m in Sources */,
 				BB4C7CDD1DC2014000FCDEDA /* MBProgressHUD.m in Sources */,

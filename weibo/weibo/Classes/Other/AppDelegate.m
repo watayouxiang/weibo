@@ -10,13 +10,13 @@
 #import "wbOAuthViewController.h"
 #import "wbAccountTool.h"
 #import "wbRootTool.h"
+#import "UIImageView+WebCache.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -34,6 +34,13 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+-(void)applicationDidReceiveMemoryWarning:(UIApplication *)application{
+    //停止所有的下载
+    [[SDWebImageManager sharedManager] cancelAll];
+    //删除缓存
+    [[SDWebImageManager sharedManager].imageCache clearMemory];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
