@@ -26,7 +26,7 @@
     [self.view addSubview:webView];
     
     NSString *baseUrl = @"https://api.weibo.com/oauth2/authorize";
-    NSString *client_id = @"2389394849";
+    NSString *client_id = @"2703609498";
     NSString *redirect_uri = @"http://www.baidu.com";
     NSString *urlStr = [NSString stringWithFormat:@"%@?client_id=%@&redirect_uri=%@",baseUrl,client_id,redirect_uri];
     NSURL *url = [NSURL URLWithString:urlStr];
