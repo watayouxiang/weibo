@@ -10,6 +10,9 @@
 
 @interface wbPhoto : NSObject
 
+/**
+ * 头像图片URL
+ */
 @property (nonatomic, strong) NSURL *thumbnail_pic;
 
 @end

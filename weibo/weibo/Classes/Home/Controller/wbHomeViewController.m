@@ -20,11 +20,9 @@
 #import "wbUser.h"
 #import "wbStatus.h"
 #import "wbAccountTool.h"
-#import "wbAccount.h"
 #import "MJRefresh.h"
-#import "MJExtension.h"
-#import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
+#import "wbStatusTool.h"
 
 @interface wbHomeViewController ()<wbCoverDelegate>
 
@@ -65,61 +63,16 @@
     
 }
 
-#pragma mark - 加载更多
--(void)loadMoreStatus{
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    if (self.statuses.count) {
-        //若指定此参数，则返回ID小于或等于max_id的微博，默认为0。
-        long long maxId = [[[self.statuses lastObject] idstr] longLongValue] - 1;
-        params[@"max_id"] = [NSString stringWithFormat:@"%lld",maxId];
-    }
-    params[@"access_token"] = [wbAccountTool account].access_token;
-    
-    //获取当前登录用户及其所关注（授权）用户的最新微博
-    [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        //结束加载更多
-        [self.tableView footerEndRefreshing];
-        
-        //获取微博字典数组
-        NSArray *dictArr = responseObject[@"statuses"];
-        //把字典数组转换成模型数组
-        NSArray *statuses = (NSMutableArray *)[wbStatus objectArrayWithKeyValuesArray:dictArr];
-        
-        //把数组中的元素添加进去
-        [self.statuses addObjectsFromArray:statuses];
-        
-        //刷新表格
-        [self.tableView reloadData];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-    }];
-}
-
 #pragma mark - 下拉刷新
 -(void)loadNewStatus{
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    if (self.statuses.count) {
-        //若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。
-        params[@"since_id"] = [self.statuses[0] idstr];
+    NSString *sinceId = nil;
+    if (self.statuses.count) {//有微博数据，才需要下拉刷新
+        sinceId = [self.statuses[0] idstr];
     }
-    params[@"access_token"] = [wbAccountTool account].access_token;
     
-    //获取当前登录用户及其所关注（授权）用户的最新微博
-    [mgr GET:@"https://api.weibo.com/2/statuses/friends_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+    [wbStatusTool newStatusWithSinceId:sinceId success:^(NSArray *statuses) {        
         //结束下拉刷新
         [self.tableView headerEndRefreshing];
-        
-        //获取微博字典数组
-        NSArray *dictArr = responseObject[@"statuses"];
-        //把字典数组转换成模型数组
-        NSArray *statuses = (NSMutableArray *)[wbStatus objectArrayWithKeyValuesArray:dictArr];
         
         //把最新的微博数插入到最前面
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, statuses.count)];
@@ -127,8 +80,29 @@
         
         //刷新表格
         [self.tableView reloadData];
+    } failure:^(NSError *error) {
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    }];
+}
+
+#pragma mark - 加载更多
+-(void)loadMoreStatus{
+    NSString *maxIdStr = nil;
+    if (self.statuses.count) {//有微博数据，才需要下拉刷新
+        long long maxId = [[[self.statuses lastObject] idstr] longLongValue] - 1;
+        maxIdStr = [NSString stringWithFormat:@"%lld",maxId];
+    }
+    
+    [wbStatusTool moreStatusWithMaxId:maxIdStr success:^(NSArray *statuses) {
+        //结束上拉刷新
+        [self.tableView footerEndRefreshing];
+        
+        //把数组中的元素添加进去
+        [self.statuses addObjectsFromArray:statuses];
+        
+        //刷新表格
+        [self.tableView reloadData];
+    } failure:^(NSError *error) {
         
     }];
 }
