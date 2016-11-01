@@ -13,8 +13,7 @@
 #import "wbCover.h"
 #import "wbPopMenu.h"
 
-#import "wbOneViewController.h"
-#import "wbViewController_One.h"
+#import "wbOneViewController.h""
 
 #import "wbPhoto.h"
 #import "wbUser.h"
@@ -164,11 +163,6 @@
 
 -(void)pop{
     NSLog(@"%s", __func__);
-    
-    wbViewController_One *one = [[wbViewController_One alloc] init];
-    one.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:one animated:YES];
-    
 }
 
 #pragma mark - tableView

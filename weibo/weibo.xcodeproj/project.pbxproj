@@ -54,8 +54,6 @@
 		BB4C7CFA1DC2014000FCDEDA /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C7CCD1DC2014000FCDEDA /* UIImageView+HighlightedWebCache.m */; };
 		BB4C7CFB1DC2014000FCDEDA /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C7CCF1DC2014000FCDEDA /* UIImageView+WebCache.m */; };
 		BB4C7CFC1DC2014000FCDEDA /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C7CD11DC2014000FCDEDA /* UIView+WebCacheOperation.m */; };
-		BB5E371B1DBF34B600AA2667 /* wbViewController_Two.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5E37191DBF34B600AA2667 /* wbViewController_Two.m */; };
-		BB5E371C1DBF34B600AA2667 /* wbViewController_Two.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5E371A1DBF34B600AA2667 /* wbViewController_Two.xib */; };
 		BB79A6EA1DC079FD00E3072D /* wbNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79A6E51DC079FD00E3072D /* wbNewFeatureController.m */; };
 		BB79A6EB1DC079FD00E3072D /* wbNewFeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79A6E91DC079FD00E3072D /* wbNewFeatureCell.m */; };
 		BB80CD411DC835CD00D411D1 /* wbStatusParam.m in Sources */ = {isa = PBXBuildFile; fileRef = BB80CD401DC835CD00D411D1 /* wbStatusParam.m */; };
@@ -88,8 +86,6 @@
 		BBF001B31DB603E60099BD50 /* UIImage+wbImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF001B21DB603E60099BD50 /* UIImage+wbImage.m */; };
 		BBF001B61DB6051D0099BD50 /* wbTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF001B51DB6051D0099BD50 /* wbTabBar.m */; };
 		BBF001B91DB60B720099BD50 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF001B81DB60B720099BD50 /* UIKit.framework */; };
-		BBF7DD771DBEFFFE00AE7EF0 /* wbViewController_One.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF7DD751DBEFFFE00AE7EF0 /* wbViewController_One.m */; };
-		BBF7DD781DBEFFFE00AE7EF0 /* wbViewController_One.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBF7DD761DBEFFFE00AE7EF0 /* wbViewController_One.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -190,9 +186,6 @@
 		BB4C7CCF1DC2014000FCDEDA /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		BB4C7CD01DC2014000FCDEDA /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		BB4C7CD11DC2014000FCDEDA /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		BB5E37181DBF34B600AA2667 /* wbViewController_Two.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbViewController_Two.h; sourceTree = "<group>"; };
-		BB5E37191DBF34B600AA2667 /* wbViewController_Two.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbViewController_Two.m; sourceTree = "<group>"; };
-		BB5E371A1DBF34B600AA2667 /* wbViewController_Two.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = wbViewController_Two.xib; sourceTree = "<group>"; };
 		BB79A6E41DC079FD00E3072D /* wbNewFeatureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbNewFeatureController.h; sourceTree = "<group>"; };
 		BB79A6E51DC079FD00E3072D /* wbNewFeatureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbNewFeatureController.m; sourceTree = "<group>"; };
 		BB79A6E81DC079FD00E3072D /* wbNewFeatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbNewFeatureCell.h; sourceTree = "<group>"; };
@@ -256,9 +249,6 @@
 		BBF001B41DB6051D0099BD50 /* wbTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbTabBar.h; sourceTree = "<group>"; };
 		BBF001B51DB6051D0099BD50 /* wbTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbTabBar.m; sourceTree = "<group>"; };
 		BBF001B81DB60B720099BD50 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		BBF7DD741DBEFFFE00AE7EF0 /* wbViewController_One.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbViewController_One.h; sourceTree = "<group>"; };
-		BBF7DD751DBEFFFE00AE7EF0 /* wbViewController_One.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbViewController_One.m; sourceTree = "<group>"; };
-		BBF7DD761DBEFFFE00AE7EF0 /* wbViewController_One.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = wbViewController_One.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -673,12 +663,6 @@
 				BBE38CAD1DB897F900BB4F35 /* wbHomeViewController.m */,
 				BBE38CCE1DB9C1E700BB4F35 /* wbOneViewController.h */,
 				BBE38CCF1DB9C1E700BB4F35 /* wbOneViewController.m */,
-				BBF7DD741DBEFFFE00AE7EF0 /* wbViewController_One.h */,
-				BBF7DD751DBEFFFE00AE7EF0 /* wbViewController_One.m */,
-				BBF7DD761DBEFFFE00AE7EF0 /* wbViewController_One.xib */,
-				BB5E37181DBF34B600AA2667 /* wbViewController_Two.h */,
-				BB5E37191DBF34B600AA2667 /* wbViewController_Two.m */,
-				BB5E371A1DBF34B600AA2667 /* wbViewController_Two.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -904,8 +888,6 @@
 				BBF001831DB5F6DA0099BD50 /* Assets.xcassets in Resources */,
 				BB4C7CE51DC2014000FCDEDA /* MJRefresh.bundle in Resources */,
 				BB4C7CDC1DC2014000FCDEDA /* MBProgressHUD.bundle in Resources */,
-				BB5E371C1DBF34B600AA2667 /* wbViewController_Two.xib in Resources */,
-				BBF7DD781DBEFFFE00AE7EF0 /* wbViewController_One.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1012,12 +994,10 @@
 				BBE38CC41DB9B60700BB4F35 /* UIBarButtonItem+wbItem.m in Sources */,
 				BBE38CC11DB8BD5500BB4F35 /* wbTabBarButton.m in Sources */,
 				BBE38CCA1DB9BC7300BB4F35 /* wbCover.m in Sources */,
-				BBF7DD771DBEFFFE00AE7EF0 /* wbViewController_One.m in Sources */,
 				BB4C7CF11DC2014000FCDEDA /* SDWebImageDecoder.m in Sources */,
 				BBE38CCD1DB9C06800BB4F35 /* wbPopMenu.m in Sources */,
 				BB4C7CFB1DC2014000FCDEDA /* UIImageView+WebCache.m in Sources */,
 				BBDD12B61DC330540007F145 /* wbAccountTool.m in Sources */,
-				BB5E371B1DBF34B600AA2667 /* wbViewController_Two.m in Sources */,
 				BB4C7CE61DC2014000FCDEDA /* MJRefreshBaseView.m in Sources */,
 				BB4C7CE91DC2014000FCDEDA /* MJRefreshHeaderView.m in Sources */,
 				BB4C7CF91DC2014000FCDEDA /* UIImage+WebP.m in Sources */,
