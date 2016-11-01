@@ -13,7 +13,7 @@
 #import "wbCover.h"
 #import "wbPopMenu.h"
 
-#import "wbOneViewController.h""
+#import "wbOneViewController.h"
 
 #import "wbPhoto.h"
 #import "wbUser.h"
