@@ -60,6 +60,7 @@
 		BB80CD441DC8362A00D411D1 /* wbStatusResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BB80CD431DC8362A00D411D1 /* wbStatusResult.m */; };
 		BB80CD471DC8370E00D411D1 /* wbStatusTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BB80CD461DC8370E00D411D1 /* wbStatusTool.m */; };
 		BB80CD4B1DC838CA00D411D1 /* wbHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BB80CD4A1DC838CA00D411D1 /* wbHttpTool.m */; };
+		BB80CD4F1DC842F400D411D1 /* wbAccountParam.m in Sources */ = {isa = PBXBuildFile; fileRef = BB80CD4E1DC842F400D411D1 /* wbAccountParam.m */; };
 		BBDD12B01DC32C580007F145 /* wbAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD12AF1DC32C580007F145 /* wbAccount.m */; };
 		BBDD12B61DC330540007F145 /* wbAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD12B51DC330540007F145 /* wbAccountTool.m */; };
 		BBDD12B91DC3320C0007F145 /* wbRootTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDD12B81DC3320C0007F145 /* wbRootTool.m */; };
@@ -198,6 +199,8 @@
 		BB80CD461DC8370E00D411D1 /* wbStatusTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbStatusTool.m; sourceTree = "<group>"; };
 		BB80CD491DC838CA00D411D1 /* wbHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbHttpTool.h; sourceTree = "<group>"; };
 		BB80CD4A1DC838CA00D411D1 /* wbHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbHttpTool.m; sourceTree = "<group>"; };
+		BB80CD4D1DC842F400D411D1 /* wbAccountParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbAccountParam.h; sourceTree = "<group>"; };
+		BB80CD4E1DC842F400D411D1 /* wbAccountParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbAccountParam.m; sourceTree = "<group>"; };
 		BBDD12AE1DC32C580007F145 /* wbAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbAccount.h; sourceTree = "<group>"; };
 		BBDD12AF1DC32C580007F145 /* wbAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbAccount.m; sourceTree = "<group>"; };
 		BBDD12B41DC330540007F145 /* wbAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbAccountTool.h; sourceTree = "<group>"; };
@@ -494,6 +497,15 @@
 			path = Http;
 			sourceTree = "<group>";
 		};
+		BB80CD4C1DC842DD00D411D1 /* Param */ = {
+			isa = PBXGroup;
+			children = (
+				BB80CD4D1DC842F400D411D1 /* wbAccountParam.h */,
+				BB80CD4E1DC842F400D411D1 /* wbAccountParam.m */,
+			);
+			path = Param;
+			sourceTree = "<group>";
+		};
 		BBDD12B11DC3303D0007F145 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -508,6 +520,7 @@
 		BBDD12B21DC3303D0007F145 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				BB80CD4C1DC842DD00D411D1 /* Param */,
 				BBDD12B41DC330540007F145 /* wbAccountTool.h */,
 				BBDD12B51DC330540007F145 /* wbAccountTool.m */,
 			);
@@ -966,6 +979,7 @@
 				BB4C7CE41DC2014000FCDEDA /* NSObject+MJKeyValue.m in Sources */,
 				BB4C7CE81DC2014000FCDEDA /* MJRefreshFooterView.m in Sources */,
 				BB4C7CF21DC2014000FCDEDA /* SDWebImageDownloader.m in Sources */,
+				BB80CD4F1DC842F400D411D1 /* wbAccountParam.m in Sources */,
 				BB4C7CF41DC2014000FCDEDA /* SDWebImageManager.m in Sources */,
 				BB4C7CDB1DC2014000FCDEDA /* MBProgressHUD+MJ.m in Sources */,
 				BB4C7CF71DC2014000FCDEDA /* UIImage+GIF.m in Sources */,

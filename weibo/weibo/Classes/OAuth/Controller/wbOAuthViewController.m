@@ -13,11 +13,6 @@
 #import "wbAccountTool.h"
 #import "wbRootTool.h"
 
-#define wbAuthorizeBaseUrl @"https://api.weibo.com/oauth2/authorize"
-#define wbClient_id     @"2703609498"
-#define wbRedirect_uri  @"http://www.baidu.com"
-#define wbClient_secret @"270a34e4a0c591bb1ce94f9d20d42d83"
-
 @interface wbOAuthViewController ()<UIWebViewDelegate>
 
 @end
@@ -30,7 +25,10 @@
     UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:webView];
     
-    NSString *urlStr = [NSString stringWithFormat:@"%@?client_id=%@&redirect_uri=%@",wbAuthorizeBaseUrl,wbClient_id,wbRedirect_uri];
+    NSString *baseUrl = @"https://api.weibo.com/oauth2/authorize";
+    NSString *client_id = @"2389394849";
+    NSString *redirect_uri = @"http://www.baidu.com";
+    NSString *urlStr = [NSString stringWithFormat:@"%@?client_id=%@&redirect_uri=%@",baseUrl,client_id,redirect_uri];
     NSURL *url = [NSURL URLWithString:urlStr];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [webView loadRequest:request];
@@ -75,35 +73,14 @@
     return YES;
 }
 
+#pragma mark - 根据code获取accountToken
 -(void)accessTokenWithCode:(NSString *)code{
-    //发送Post请求
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"client_id"] = wbClient_id;
-    params[@"client_secret"] = wbClient_secret;
-    params[@"grant_type"] = @"authorization_code";
-    params[@"code"] = code;
-    params[@"redirect_uri"] = wbRedirect_uri;
-    
-    [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        wbLog(@"%@", responseObject);
-        
-        //字典转模型
-        wbAccount *account = [wbAccount accountWithDict:responseObject];
-        
-        //保存账号信息
-        [wbAccountTool saveAccount:account];
-        
-        //进入主页或者新特征页面
+    [wbAccountTool accountWithCode:code success:^{
+        // 进入主页或者新特性,选择窗口的根控制器
         [wbRootTool chooseRootViewController:wbKeyWindow];
-        
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        wbLog(@"%@", error);
+    } failure:^(NSError *error) {
         
     }];
-    
 }
 
 @end

@@ -15,4 +15,12 @@
 +(void)saveAccount:(wbAccount *)account;
 +(wbAccount *)account;
 
+/**
+ *  获取accountToken
+ *  code    RequestToken
+ *  success 成功的回调
+ *  failure 失败的回调
+ */
++(void)accountWithCode:(NSString *)code success:(void(^)())success failure:(void(^)(NSError *error))failure;
+
 @end

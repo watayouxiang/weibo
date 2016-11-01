@@ -10,6 +10,4 @@
 
 @interface wbOAuthViewController : UIViewController
 
-+ (void)chooseRootViewController:(UIWindow *)window;
-
 @end
