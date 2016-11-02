@@ -62,6 +62,12 @@
     
 }
 
+#pragma mark - 刷新最新的微博
+- (void)refresh{
+    //自动下拉刷新
+    [self.tableView headerBeginRefreshing];
+}
+
 #pragma mark - 下拉刷新
 -(void)loadNewStatus{
     NSString *sinceId = nil;

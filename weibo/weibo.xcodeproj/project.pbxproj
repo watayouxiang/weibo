@@ -11,6 +11,13 @@
 		BB1671D91DC722EF00455648 /* wbStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1671D81DC722EF00455648 /* wbStatus.m */; };
 		BB1671DC1DC7230500455648 /* wbUser.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1671DB1DC7230500455648 /* wbUser.m */; };
 		BB1671DF1DC7230F00455648 /* wbPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1671DE1DC7230F00455648 /* wbPhoto.m */; };
+		BB186DF81DC97D2F0063A3DD /* wbBaseParam.m in Sources */ = {isa = PBXBuildFile; fileRef = BB186DF71DC97D2F0063A3DD /* wbBaseParam.m */; };
+		BB186DFE1DC97F1F0063A3DD /* wbUserParam.m in Sources */ = {isa = PBXBuildFile; fileRef = BB186DFD1DC97F1F0063A3DD /* wbUserParam.m */; };
+		BB186E011DC97F640063A3DD /* wbUserResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BB186E001DC97F640063A3DD /* wbUserResult.m */; };
+		BB186E041DC97FBB0063A3DD /* wbUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BB186E031DC97FBB0063A3DD /* wbUserTool.m */; };
+		BB186E061DC985170063A3DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB186E051DC985170063A3DD /* AVFoundation.framework */; };
+		BB186E0A1DC9861D0063A3DD /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB186E081DC9861D0063A3DD /* silence.mp3 */; };
+		BB186E0B1DC9861D0063A3DD /* 爸比我要喝奶奶.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB186E091DC9861D0063A3DD /* 爸比我要喝奶奶.mp3 */; };
 		BB4C7CD21DC2014000FCDEDA /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C7C771DC2014000FCDEDA /* AFHTTPRequestOperation.m */; };
 		BB4C7CD31DC2014000FCDEDA /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C7C791DC2014000FCDEDA /* AFHTTPRequestOperationManager.m */; };
 		BB4C7CD41DC2014000FCDEDA /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C7C7B1DC2014000FCDEDA /* AFHTTPSessionManager.m */; };
@@ -99,6 +106,17 @@
 		BB1671DB1DC7230500455648 /* wbUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbUser.m; sourceTree = "<group>"; };
 		BB1671DD1DC7230F00455648 /* wbPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbPhoto.h; sourceTree = "<group>"; };
 		BB1671DE1DC7230F00455648 /* wbPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbPhoto.m; sourceTree = "<group>"; };
+		BB186DF61DC97D2F0063A3DD /* wbBaseParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbBaseParam.h; sourceTree = "<group>"; };
+		BB186DF71DC97D2F0063A3DD /* wbBaseParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbBaseParam.m; sourceTree = "<group>"; };
+		BB186DFC1DC97F1F0063A3DD /* wbUserParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbUserParam.h; sourceTree = "<group>"; };
+		BB186DFD1DC97F1F0063A3DD /* wbUserParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbUserParam.m; sourceTree = "<group>"; };
+		BB186DFF1DC97F640063A3DD /* wbUserResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbUserResult.h; sourceTree = "<group>"; };
+		BB186E001DC97F640063A3DD /* wbUserResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbUserResult.m; sourceTree = "<group>"; };
+		BB186E021DC97FBB0063A3DD /* wbUserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbUserTool.h; sourceTree = "<group>"; };
+		BB186E031DC97FBB0063A3DD /* wbUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbUserTool.m; sourceTree = "<group>"; };
+		BB186E051DC985170063A3DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BB186E081DC9861D0063A3DD /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
+		BB186E091DC9861D0063A3DD /* 爸比我要喝奶奶.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "爸比我要喝奶奶.mp3"; sourceTree = "<group>"; };
 		BB4C7C761DC2014000FCDEDA /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		BB4C7C771DC2014000FCDEDA /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		BB4C7C781DC2014000FCDEDA /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -259,6 +277,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB186E061DC985170063A3DD /* AVFoundation.framework in Frameworks */,
 				BBF001B91DB60B720099BD50 /* UIKit.framework in Frameworks */,
 				305946AABDB5BCED936CF83A /* libPods-weibo.a in Frameworks */,
 			);
@@ -287,6 +306,54 @@
 				BB1671DE1DC7230F00455648 /* wbPhoto.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BB186DF51DC97D200063A3DD /* Param */ = {
+			isa = PBXGroup;
+			children = (
+				BB186DF61DC97D2F0063A3DD /* wbBaseParam.h */,
+				BB186DF71DC97D2F0063A3DD /* wbBaseParam.m */,
+			);
+			path = Param;
+			sourceTree = "<group>";
+		};
+		BB186DF91DC97EFC0063A3DD /* User */ = {
+			isa = PBXGroup;
+			children = (
+				BB186DFA1DC97EFC0063A3DD /* Param */,
+				BB186DFB1DC97EFC0063A3DD /* Result */,
+				BB186E021DC97FBB0063A3DD /* wbUserTool.h */,
+				BB186E031DC97FBB0063A3DD /* wbUserTool.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		BB186DFA1DC97EFC0063A3DD /* Param */ = {
+			isa = PBXGroup;
+			children = (
+				BB186DFC1DC97F1F0063A3DD /* wbUserParam.h */,
+				BB186DFD1DC97F1F0063A3DD /* wbUserParam.m */,
+			);
+			path = Param;
+			sourceTree = "<group>";
+		};
+		BB186DFB1DC97EFC0063A3DD /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				BB186DFF1DC97F640063A3DD /* wbUserResult.h */,
+				BB186E001DC97F640063A3DD /* wbUserResult.m */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		BB186E071DC9861D0063A3DD /* Mp3 */ = {
+			isa = PBXGroup;
+			children = (
+				BB186E081DC9861D0063A3DD /* silence.mp3 */,
+				BB186E091DC9861D0063A3DD /* 爸比我要喝奶奶.mp3 */,
+			);
+			name = Mp3;
+			path = "../../../../Movies/微博项目/微博04/代码/04-账号未读数工具类封装/传智微博/Mp3";
 			sourceTree = "<group>";
 		};
 		BB4C7C741DC2014000FCDEDA /* Lib */ = {
@@ -509,6 +576,8 @@
 		BBDD12B11DC3303D0007F145 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				BB186DF91DC97EFC0063A3DD /* User */,
+				BB186DF51DC97D200063A3DD /* Param */,
 				BB80CD481DC8389700D411D1 /* Http */,
 				BB80CD3C1DC835AE00D411D1 /* Status */,
 				BBDD12B21DC3303D0007F145 /* Account */,
@@ -603,6 +672,7 @@
 		BBF001761DB5F6DA0099BD50 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BB186E071DC9861D0063A3DD /* Mp3 */,
 				BBF001871DB5F6DA0099BD50 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -829,6 +899,7 @@
 		BBF001B71DB60B720099BD50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB186E051DC985170063A3DD /* AVFoundation.framework */,
 				BBF001B81DB60B720099BD50 /* UIKit.framework */,
 				1E2AB5EA4C28C077D1C4925D /* libPods-weibo.a */,
 			);
@@ -871,6 +942,11 @@
 					BBF001721DB5F6DA0099BD50 = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -897,9 +973,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB186E0A1DC9861D0063A3DD /* silence.mp3 in Resources */,
 				BBF001861DB5F6DA0099BD50 /* LaunchScreen.storyboard in Resources */,
 				BBF001831DB5F6DA0099BD50 /* Assets.xcassets in Resources */,
 				BB4C7CE51DC2014000FCDEDA /* MJRefresh.bundle in Resources */,
+				BB186E0B1DC9861D0063A3DD /* 爸比我要喝奶奶.mp3 in Resources */,
 				BB4C7CDC1DC2014000FCDEDA /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -982,6 +1060,7 @@
 				BB80CD4F1DC842F400D411D1 /* wbAccountParam.m in Sources */,
 				BB4C7CF41DC2014000FCDEDA /* SDWebImageManager.m in Sources */,
 				BB4C7CDB1DC2014000FCDEDA /* MBProgressHUD+MJ.m in Sources */,
+				BB186E041DC97FBB0063A3DD /* wbUserTool.m in Sources */,
 				BB4C7CF71DC2014000FCDEDA /* UIImage+GIF.m in Sources */,
 				BBE38CB11DB8981700BB4F35 /* wbDiscoverViewController.m in Sources */,
 				BB4C7CE31DC2014000FCDEDA /* NSObject+MJIvar.m in Sources */,
@@ -1002,6 +1081,7 @@
 				BB4C7CDA1DC2014000FCDEDA /* AFURLSessionManager.m in Sources */,
 				BBE38CAE1DB897F900BB4F35 /* wbHomeViewController.m in Sources */,
 				BBF001B01DB5FEC60099BD50 /* wbTabBarController.m in Sources */,
+				BB186E011DC97F640063A3DD /* wbUserResult.m in Sources */,
 				BB80CD411DC835CD00D411D1 /* wbStatusParam.m in Sources */,
 				BB80CD471DC8370E00D411D1 /* wbStatusTool.m in Sources */,
 				BBDD12B91DC3320C0007F145 /* wbRootTool.m in Sources */,
@@ -1011,10 +1091,12 @@
 				BB4C7CF11DC2014000FCDEDA /* SDWebImageDecoder.m in Sources */,
 				BBE38CCD1DB9C06800BB4F35 /* wbPopMenu.m in Sources */,
 				BB4C7CFB1DC2014000FCDEDA /* UIImageView+WebCache.m in Sources */,
+				BB186DF81DC97D2F0063A3DD /* wbBaseParam.m in Sources */,
 				BBDD12B61DC330540007F145 /* wbAccountTool.m in Sources */,
 				BB4C7CE61DC2014000FCDEDA /* MJRefreshBaseView.m in Sources */,
 				BB4C7CE91DC2014000FCDEDA /* MJRefreshHeaderView.m in Sources */,
 				BB4C7CF91DC2014000FCDEDA /* UIImage+WebP.m in Sources */,
+				BB186DFE1DC97F1F0063A3DD /* wbUserParam.m in Sources */,
 				BB4C7CD61DC2014000FCDEDA /* AFSecurityPolicy.m in Sources */,
 				BB1671DC1DC7230500455648 /* wbUser.m in Sources */,
 				BB4C7CD31DC2014000FCDEDA /* AFHTTPRequestOperationManager.m in Sources */,

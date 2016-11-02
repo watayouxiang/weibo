@@ -10,4 +10,6 @@
 
 @interface wbHomeViewController : UITableViewController
 
+- (void)refresh;
+
 @end

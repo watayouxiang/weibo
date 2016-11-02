@@ -17,9 +17,16 @@
 
 #import "wbNavigationController.h"
 
+#import "wbUserTool.h"
+#import "wbUserResult.h"
+
 @interface wbTabBarController ()<wbTabBarDelegate>
 
 @property (nonatomic, strong) NSMutableArray *items;
+
+@property (nonatomic, weak) wbHomeViewController *home;
+@property (nonatomic, weak) wbMessageViewController *message;
+@property (nonatomic, weak) wbProfileViewController *profile;
 
 @end
 
@@ -39,6 +46,27 @@
     
     [self setupTabBar];
     
+    //每隔2秒请求一次未读数
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(requestUnread) userInfo:nil repeats:YES];
+    
+}
+
+#pragma mark - 请求未读数
+-(void)requestUnread{
+    wbLog(@"%s",__func__);
+    
+    [wbUserTool unreadWithSuccess:^(wbUserResult *result) {
+        
+        _home.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",result.status];
+        _message.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",result.messageCount];
+        _profile.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",result.follower];
+        
+        //设置应用程序所有的未读数
+        [UIApplication sharedApplication].applicationIconBadgeNumber = result.totoalCount;
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 #pragma mark - 设置自定义tabBar
@@ -66,6 +94,12 @@
 
 #pragma mark - 点击tabBar上的tabBarItem时调用
 - (void)tabBar:(wbTabBar *)tabBar didClickButton:(NSInteger)index{
+    
+    //点击首页tabBarItem，刷新
+    if (index == 0 && self.selectedIndex == index) {
+        [_home refresh];
+    }
+    
     self.selectedIndex = index;
 }
 
@@ -74,10 +108,12 @@
     
     wbHomeViewController *home = [[wbHomeViewController alloc] init];
     [self setupOneChildViewController:home image:[UIImage imageNamed:@"tabbar_home"] selectedImage:[UIImage imageWithOriginalName:@"tabbar_home_selected"] title:@"首页"];
+    _home = home;
     
     
     wbMessageViewController *message = [[wbMessageViewController alloc] init];
     [self setupOneChildViewController:message image:[UIImage imageNamed:@"tabbar_message_center"] selectedImage:[UIImage imageWithOriginalName:@"tabbar_message_center_selected"] title:@"消息"];
+    _message = message;
     
     
     wbDiscoverViewController *discover = [[wbDiscoverViewController alloc] init];
@@ -86,7 +122,7 @@
     
     wbProfileViewController *profile = [[wbProfileViewController alloc] init];
     [self setupOneChildViewController:profile image:[UIImage imageNamed:@"tabbar_profile"] selectedImage:[UIImage imageWithOriginalName:@"tabbar_profile_selected"] title:@"我"];
-    
+    _profile = profile;
     
 }
 
@@ -98,8 +134,8 @@
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = image;
     vc.tabBarItem.selectedImage = selectedImage;
-    vc.tabBarItem.badgeValue = @"10";
     
+    //保存tabBarItem模型到数组
     [self.items addObject:vc.tabBarItem];
     
     wbNavigationController *nav = [[wbNavigationController alloc] initWithRootViewController:vc];
