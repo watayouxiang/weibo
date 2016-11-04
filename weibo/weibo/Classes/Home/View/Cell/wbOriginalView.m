@@ -101,7 +101,7 @@
     
     //昵称
     if (status.user.vip) {
-        _nameView.textColor = [UIColor redColor];
+        _nameView.textColor = [UIColor orangeColor];
     }else{
         _nameView.textColor = [UIColor blackColor];
     }

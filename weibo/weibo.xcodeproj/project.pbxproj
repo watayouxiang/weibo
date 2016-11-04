@@ -66,6 +66,7 @@
 		BB6195741DCC31C30038664A /* wbOriginalView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6195731DCC31C30038664A /* wbOriginalView.m */; };
 		BB6195771DCC33BD0038664A /* wbRetweetView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6195761DCC33BD0038664A /* wbRetweetView.m */; };
 		BB61957A1DCC35000038664A /* wbStatusToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6195791DCC35000038664A /* wbStatusToolBar.m */; };
+		BB6195831DCC6DA70038664A /* NSDate+wb.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6195821DCC6DA70038664A /* NSDate+wb.m */; };
 		BB79A6EA1DC079FD00E3072D /* wbNewFeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79A6E51DC079FD00E3072D /* wbNewFeatureController.m */; };
 		BB79A6EB1DC079FD00E3072D /* wbNewFeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79A6E91DC079FD00E3072D /* wbNewFeatureCell.m */; };
 		BB80CD411DC835CD00D411D1 /* wbStatusParam.m in Sources */ = {isa = PBXBuildFile; fileRef = BB80CD401DC835CD00D411D1 /* wbStatusParam.m */; };
@@ -220,6 +221,8 @@
 		BB6195761DCC33BD0038664A /* wbRetweetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbRetweetView.m; sourceTree = "<group>"; };
 		BB6195781DCC35000038664A /* wbStatusToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbStatusToolBar.h; sourceTree = "<group>"; };
 		BB6195791DCC35000038664A /* wbStatusToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbStatusToolBar.m; sourceTree = "<group>"; };
+		BB6195811DCC6DA70038664A /* NSDate+wb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+wb.h"; sourceTree = "<group>"; };
+		BB6195821DCC6DA70038664A /* NSDate+wb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+wb.m"; sourceTree = "<group>"; };
 		BB79A6E41DC079FD00E3072D /* wbNewFeatureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbNewFeatureController.h; sourceTree = "<group>"; };
 		BB79A6E51DC079FD00E3072D /* wbNewFeatureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbNewFeatureController.m; sourceTree = "<group>"; };
 		BB79A6E81DC079FD00E3072D /* wbNewFeatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbNewFeatureCell.h; sourceTree = "<group>"; };
@@ -900,6 +903,8 @@
 				BBE38CBC1DB8AFA700BB4F35 /* UIView+wbFrame.m */,
 				BBE38CC21DB9B60700BB4F35 /* UIBarButtonItem+wbItem.h */,
 				BBE38CC31DB9B60700BB4F35 /* UIBarButtonItem+wbItem.m */,
+				BB6195811DCC6DA70038664A /* NSDate+wb.h */,
+				BB6195821DCC6DA70038664A /* NSDate+wb.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1103,6 +1108,7 @@
 				BB80CD4F1DC842F400D411D1 /* wbAccountParam.m in Sources */,
 				BB4C7CF41DC2014000FCDEDA /* SDWebImageManager.m in Sources */,
 				BB4C7CDB1DC2014000FCDEDA /* MBProgressHUD+MJ.m in Sources */,
+				BB6195831DCC6DA70038664A /* NSDate+wb.m in Sources */,
 				BB186E041DC97FBB0063A3DD /* wbUserTool.m in Sources */,
 				BB4C7CF71DC2014000FCDEDA /* UIImage+GIF.m in Sources */,
 				BBE38CB11DB8981700BB4F35 /* wbDiscoverViewController.m in Sources */,
