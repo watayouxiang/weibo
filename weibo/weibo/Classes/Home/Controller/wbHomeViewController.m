@@ -95,6 +95,9 @@
     }
     
     [wbStatusTool newStatusWithSinceId:sinceId success:^(NSArray *statuses) {        
+        //提示刷新出来的微博条数
+        [self showNewStatusCount:statuses.count];
+        
         //结束下拉刷新
         [self.tableView headerEndRefreshing];
         
@@ -107,6 +110,42 @@
     } failure:^(NSError *error) {
         
     }];
+}
+
+#pragma mark - 提示刷新出来的微博条数
+-(void)showNewStatusCount:(NSInteger)count{
+    if (count == 0) {
+        return;
+    }
+    
+    CGFloat h = 35;
+    CGFloat x = 0;
+    CGFloat y = CGRectGetMaxY(self.navigationController.navigationBar.frame) - h;
+    CGFloat w = self.view.width;
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x, y, w, h)];
+    
+    label.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"timeline_new_status_background"]];
+    label.text = [NSString stringWithFormat:@"最新微博数%ld",count];
+    label.textColor = [UIColor whiteColor];
+    [label setFont:[UIFont systemFontOfSize:15]];
+    label.textAlignment = NSTextAlignmentCenter;
+    
+    //插入到navigationBar的下面
+    [self.navigationController.view insertSubview:label belowSubview:self.navigationController.navigationBar];
+    
+    //动画
+    [UIView animateWithDuration:0.25 animations:^{
+        //下移
+        label.transform = CGAffineTransformMakeTranslation(0, h);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.25 delay:2 options:UIViewAnimationOptionCurveLinear animations:^{
+            //还原
+            label.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            [label removeFromSuperview];
+        }];
+    }];
+    
 }
 
 #pragma mark - 加载更多
