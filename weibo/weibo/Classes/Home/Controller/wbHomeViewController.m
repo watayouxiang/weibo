@@ -18,6 +18,7 @@
 #import "wbPhoto.h"
 #import "wbUser.h"
 #import "wbStatus.h"
+#import "wbStatusFrame.h"
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
 #import "wbStatusTool.h"
@@ -25,21 +26,23 @@
 #import "wbAccount.h"
 #import "wbAccountTool.h"
 
+#import "wbStatusCell.h"
+
 @interface wbHomeViewController ()<wbCoverDelegate>
 
 @property (nonatomic, weak) wbTitleButton *titleButton;
 @property (nonatomic, strong) wbOneViewController *one;
-@property (nonatomic, strong) NSMutableArray *statuses;
+@property (nonatomic, strong) NSMutableArray *statusFrames;
 
 @end
 
 @implementation wbHomeViewController
 
-- (NSMutableArray *)statuses{
-    if (_statuses == nil) {
-        _statuses = [NSMutableArray array];
+- (NSMutableArray *)statusFrames{
+    if (_statusFrames == nil) {
+        _statusFrames = [NSMutableArray array];
     }
-    return _statuses;
+    return _statusFrames;
 }
 
 - (wbOneViewController *)one{
@@ -51,6 +54,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //设置tableView的背景色
+    self.tableView.backgroundColor = [UIColor colorWithRed:245/255.0f green:245/255.0f blue:245/255.0f alpha:1.0f];
     
     //设置导航栏
     [self setupNavigationBar];
@@ -90,8 +96,9 @@
 #pragma mark - 下拉刷新
 -(void)loadNewStatus{
     NSString *sinceId = nil;
-    if (self.statuses.count) {//有微博数据，才需要下拉刷新
-        sinceId = [self.statuses[0] idstr];
+    if (self.statusFrames.count) {//有微博数据，才需要下拉刷新
+        wbStatus *status = [self.statusFrames[0] status];
+        sinceId = status.idstr;
     }
     
     [wbStatusTool newStatusWithSinceId:sinceId success:^(NSArray *statuses) {        
@@ -101,9 +108,12 @@
         //结束下拉刷新
         [self.tableView headerEndRefreshing];
         
+        //wbStatus转wbStatusFrame
+        NSMutableArray *statusFrames = [self statusesParserStatusFrames:statuses];
+        
         //把最新的微博数插入到最前面
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, statuses.count)];
-        [self.statuses insertObjects:statuses atIndexes:indexSet];
+        [self.statusFrames insertObjects:statusFrames atIndexes:indexSet];
         
         //刷新表格
         [self.tableView reloadData];
@@ -151,8 +161,9 @@
 #pragma mark - 加载更多
 -(void)loadMoreStatus{
     NSString *maxIdStr = nil;
-    if (self.statuses.count) {//有微博数据，才需要下拉刷新
-        long long maxId = [[[self.statuses lastObject] idstr] longLongValue] - 1;
+    if (self.statusFrames.count) {//有微博数据，才需要下拉刷新
+        wbStatus *status = [self.statusFrames[0] status];
+        long long maxId = [status.idstr longLongValue] - 1;
         maxIdStr = [NSString stringWithFormat:@"%lld",maxId];
     }
     
@@ -160,14 +171,28 @@
         //结束上拉刷新
         [self.tableView footerEndRefreshing];
         
+        //wbStatus转wbStatusFrame
+        NSMutableArray *statusFrames = [self statusesParserStatusFrames:statuses];
+        
         //把数组中的元素添加进去
-        [self.statuses addObjectsFromArray:statuses];
+        [self.statusFrames addObjectsFromArray:statusFrames];
         
         //刷新表格
         [self.tableView reloadData];
     } failure:^(NSError *error) {
         
     }];
+}
+
+#pragma mark - wbStatus转wbStatusFrame
+-(NSMutableArray *)statusesParserStatusFrames:(NSArray *)statuses{
+    NSMutableArray *statusFrames = [NSMutableArray array];
+    for (wbStatus *status in statuses) {
+        wbStatusFrame *statusFrame = [[wbStatusFrame alloc] init];
+        statusFrame.status = status;
+        [statusFrames addObject:statusFrame];
+    }
+    return statusFrames;
 }
 
 #pragma mark - 设置导航栏
@@ -192,7 +217,6 @@
     [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.titleView = titleButton;
-    
     
 }
 
@@ -231,28 +255,28 @@
 
 #pragma mark - tableView
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.statuses.count;
+    return self.statusFrames.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID ];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
+    //创建cell
+    wbStatusCell *cell = [wbStatusCell cellWithTableView:tableView];
     
-    //获取status模型
-    wbStatus *status = self.statuses[indexPath.row];
-    
-    //用户昵称
-    cell.textLabel.text = status.user.name;
-    [cell.imageView sd_setImageWithURL:status.user.profile_image_url placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
-    cell.detailTextLabel.text = status.text;
+    //给cell传递statusFrame模型
+    wbStatusFrame *statusFrame = self.statusFrames[indexPath.row];
+    cell.statusF = statusFrame;
     
     return cell;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //获取statusFrame模型
+    wbStatusFrame *statusFrame = self.statusFrames[indexPath.row];
+    
+    return statusFrame.cellHeight;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -19,8 +19,13 @@
 #define wbLog(...)
 #endif
 
-
-
+//-------------------首页cell-------------------
+#define wbStatusCellMargin 10
+#define wbNameFont [UIFont systemFontOfSize:13]
+#define wbTimeFont [UIFont systemFontOfSize:12]
+#define wbSourceFont wbTimeFont
+#define wbTextFont [UIFont systemFontOfSize:15]
+#define wbScreenW [UIScreen mainScreen].bounds.size.width
 
 
 #endif
