@@ -12,7 +12,14 @@
 
 @interface wbAccountTool : NSObject
 
+/**
+ *  保存账号模型
+ */
 +(void)saveAccount:(wbAccount *)account;
+
+/**
+ *  读取账号模型
+ */
 +(wbAccount *)account;
 
 /**

@@ -7,11 +7,13 @@
 //
 
 #import "wbAccount.h"
+#import "MJExtension.h"
 
 #define wbAccountTokenKey @"token"
 #define wbUidKey @"uid"
 #define wbExpires_inKey @"exoires"
 #define wbExpires_dateKey @"date"
+#define wbNameKey @"name"
 
 @implementation wbAccount
 
@@ -37,24 +39,28 @@
     _expires_date = [NSDate dateWithTimeIntervalSinceNow:[expires_in longLongValue]];
 }
 
-#pragma mark - 归档
--(void)encodeWithCoder:(NSCoder *)aCoder{
-    [aCoder encodeObject:_access_token forKey:wbAccountTokenKey];
-    [aCoder encodeObject:_expires_in forKey:wbExpires_inKey];
-    [aCoder encodeObject:_uid forKey:wbUidKey];
-    [aCoder encodeObject:_expires_date forKey:wbExpires_dateKey];
-}
-
-#pragma mark - 解档
--(id)initWithCoder:(NSCoder *)aDecoder{
-    if (self = [super init]) {
-        _access_token =  [aDecoder decodeObjectForKey:wbAccountTokenKey];
-        _expires_in = [aDecoder decodeObjectForKey:wbExpires_inKey];
-        _uid = [aDecoder decodeObjectForKey:wbUidKey];
-        _expires_date = [aDecoder decodeObjectForKey:wbExpires_dateKey];
-    }
-    return self;
-}
+//底层实现了当前类所有属性的归档和解档
+MJCodingImplementation
+//#pragma mark - 归档
+//-(void)encodeWithCoder:(NSCoder *)aCoder{
+//    [aCoder encodeObject:_access_token forKey:wbAccountTokenKey];
+//    [aCoder encodeObject:_expires_in forKey:wbExpires_inKey];
+//    [aCoder encodeObject:_uid forKey:wbUidKey];
+//    [aCoder encodeObject:_expires_date forKey:wbExpires_dateKey];
+//    [aCoder encodeObject:_name forKey:wbNameKey];
+//}
+//
+//#pragma mark - 解档
+//-(id)initWithCoder:(NSCoder *)aDecoder{
+//    if (self = [super init]) {
+//        _access_token =  [aDecoder decodeObjectForKey:wbAccountTokenKey];
+//        _expires_in = [aDecoder decodeObjectForKey:wbExpires_inKey];
+//        _uid = [aDecoder decodeObjectForKey:wbUidKey];
+//        _expires_date = [aDecoder decodeObjectForKey:wbExpires_dateKey];
+//        _name = [aDecoder decodeObjectForKey:wbNameKey];
+//    }
+//    return self;
+//}
 
 
 @end

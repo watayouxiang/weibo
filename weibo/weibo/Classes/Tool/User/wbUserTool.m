@@ -13,6 +13,7 @@
 #import "wbHttpTool.h"
 #import "MJExtension.h"
 #import "wbUserResult.h"
+#import "wbUser.h"
 
 @implementation wbUserTool
 
@@ -32,6 +33,26 @@
         
     } failure:^(NSError *error) {
         
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
++ (void)userInfoWithSuccess:(void(^)(wbUser *user))success failure:(void(^)(NSError *error))failure{
+    
+    //创建参数模型
+    wbUserParam *param = [wbUserParam param];//access_token
+    param.uid = [wbAccountTool account].uid;//uid
+    
+    [wbHttpTool GET:@"https://api.weibo.com/2/users/show.json" parameters:param.keyValues success:^(id responseObject) {
+        //字典转模型
+        wbUser *user = [wbUser objectWithKeyValues:responseObject];
+        if (success) {
+            success(user);
+        }
+        
+    } failure:^(NSError *error) {
         if (failure) {
             failure(error);
         }

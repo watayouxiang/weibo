@@ -18,10 +18,12 @@
 #import "wbPhoto.h"
 #import "wbUser.h"
 #import "wbStatus.h"
-#import "wbAccountTool.h"
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
 #import "wbStatusTool.h"
+#import "wbUserTool.h"
+#import "wbAccount.h"
+#import "wbAccountTool.h"
 
 @interface wbHomeViewController ()<wbCoverDelegate>
 
@@ -60,6 +62,23 @@
     //加载更多
     [self.tableView addFooterWithTarget:self action:@selector(loadMoreStatus)];
     
+    //设置用户昵称
+    [self setupUserName];
+    
+}
+
+#pragma mark - 设置用户昵称
+-(void)setupUserName{
+    [wbUserTool userInfoWithSuccess:^(wbUser *user) {
+        [self.titleButton setTitle:user.name forState:UIControlStateNormal];
+        
+        //将用户信息保存到偏好设置
+        wbAccount *account = [wbAccountTool account];
+        account.name = user.name;
+        [wbAccountTool saveAccount:account];
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 #pragma mark - 刷新最新的微博
