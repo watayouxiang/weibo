@@ -71,6 +71,7 @@
     //来源
     UILabel *sourceView = [[UILabel alloc] init];
     sourceView.font = wbSourceFont;
+    sourceView.textColor = [UIColor lightGrayColor];
     [self addSubview:sourceView];
     _sourceView = sourceView;
     
@@ -112,7 +113,7 @@
     UIImage *image = [UIImage imageNamed:imageName];
     _vipView.image = image;
     
-    //时间
+    //时间（每次有新的时间的时候都需要计算时间的frame）
     _timeView.text = status.created_at;
     
     //来源
@@ -137,11 +138,18 @@
         _vipView.hidden = YES;
     }
     
-    //时间
-    _timeView.frame = _statusF.originalTimeFrame;
+    //时间（每次有更新都需要计算时间的frame）
+    wbStatus *status = _statusF.status;
+    CGFloat timeX = _nameView.frame.origin.x;
+    CGFloat timeY = CGRectGetMaxY(_nameView.frame) + wbStatusCellMargin * 0.5;
+    CGSize timeSize = [status.created_at sizeWithFont:wbTimeFont];
+    _timeView.frame = (CGRect){{timeX,timeY},timeSize};
     
-    //来源
-    _sourceView.frame = _statusF.originalSourceFrame;
+    //来源（来源的frame是基于时间的frame计算的）
+    CGFloat sourceX = CGRectGetMaxX(_timeView.frame) + wbStatusCellMargin;
+    CGFloat sourceY = timeY;
+    CGSize sourceSize = [status.source sizeWithFont:wbSourceFont];
+    _sourceView.frame = (CGRect){{sourceX,sourceY},sourceSize};
     
     //正文
     _textView.frame = _statusF.originalTextFrame;

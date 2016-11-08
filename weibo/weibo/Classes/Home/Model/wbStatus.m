@@ -49,5 +49,18 @@
     return _created_at;
 }
 
+- (void)setSource:(NSString *)source{
+    /**
+     <a href="http://weibo.com/" rel="nofollow">微博 weibo.com</a>
+     来自:微博 weibo.com
+     */
+    NSRange range = [source rangeOfString:@">"];
+    source = [source substringFromIndex:range.location + range.length];
+    range = [source rangeOfString:@"<"];
+    source = [source substringToIndex:range.location];
+    source = [NSString stringWithFormat:@"来自: %@",source];
+    
+    _source = source;
+}
 
 @end

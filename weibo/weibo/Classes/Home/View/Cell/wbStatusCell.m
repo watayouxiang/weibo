@@ -84,12 +84,12 @@
     
     //设置原创微博frame
     _originalView.frame = statusF.originalViewFrame;
-    //设置原创微博子控件的frame和数据
+    //设置原创微博子控件的frame和data
     _originalView.statusF = statusF;
     
     //设置转发微博frame
     _retweetView.frame = statusF.retweetViewFrame;
-    //设置转发微博子控件的frame和数据
+    //设置转发微博子控件的frame和data
     _retweetView.statusF = statusF;
     
     //设置工具条frame

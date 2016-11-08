@@ -57,17 +57,8 @@
         _originalVipFrame = CGRectMake(vipX, vipY, vipWH, vipWH);
     }
     
-    //时间
-    CGFloat timeX = nameX;
-    CGFloat timeY = CGRectGetMaxY(_originalNameFrame) + wbStatusCellMargin * 0.5;
-    CGSize timeSize = [_status.created_at sizeWithFont:wbTimeFont];
-    _originalTimeFrame = (CGRect){{timeX,timeY},timeSize};
-    
-    //来源
-    CGFloat sourceX = CGRectGetMaxX(_originalTimeFrame) + wbStatusCellMargin;
-    CGFloat sourceY = timeY;
-    CGSize sourceSize = [_status.source sizeWithFont:wbSourceFont];
-    _originalSourceFrame = (CGRect){{sourceX,sourceY},sourceSize};
+    //时间（因为每次更新都需要重新计算时间的frame，所以这里不做计算，转到wbOriginalView中计算）
+    //来源（因为时间的frame实时计算，而来源的frame是基于时间的frame计算的，所以也要放在到wbOriginalView中计算）
     
     //正文
     CGFloat textX = imageX;
