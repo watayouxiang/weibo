@@ -146,7 +146,7 @@
     _timeView.frame = (CGRect){{timeX,timeY},timeSize};
     
     //来源（来源的frame是基于时间的frame计算的）
-    CGFloat sourceX = CGRectGetMaxX(_timeView.frame) + wbStatusCellMargin;
+    CGFloat sourceX = CGRectGetMaxX(_timeView.frame) + wbStatusCellMargin * 0.5;
     CGFloat sourceY = timeY;
     CGSize sourceSize = [status.source sizeWithFont:wbSourceFont];
     _sourceView.frame = (CGRect){{sourceX,sourceY},sourceSize};
