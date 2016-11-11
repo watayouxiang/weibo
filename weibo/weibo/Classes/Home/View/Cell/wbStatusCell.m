@@ -94,6 +94,8 @@
     
     //设置工具条frame
     _toolBar.frame = statusF.toolBarFrame;
+    //设置工具条的子控件的frame和data
+    _toolBar.status = statusF.status;
 }
 
 @end

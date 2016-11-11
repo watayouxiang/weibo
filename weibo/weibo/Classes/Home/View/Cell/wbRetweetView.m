@@ -39,6 +39,7 @@
     
     //昵称
     UILabel *nameView = [[UILabel alloc] init];
+    nameView.textColor = [UIColor blueColor];
     nameView.font = wbNameFont;
     [self addSubview:nameView];
     _nameView = nameView;
@@ -67,7 +68,8 @@
     wbStatus *status = _statusF.status;
     
     //昵称
-    _nameView.text = status.retweeted_status.user.name;
+    _nameView.text = status.retweetName;
+    wbLog(@"--------%@",status.retweetName);
     
     //正文
     _textView.text = status.retweeted_status.text;

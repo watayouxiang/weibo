@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface wbStatusToolBar : UIView
+@class wbStatus;
+
+@interface wbStatusToolBar : UIImageView
+
+@property (nonatomic, strong) wbStatus *status;
 
 @end

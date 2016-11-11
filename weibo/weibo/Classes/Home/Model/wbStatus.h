@@ -12,7 +12,15 @@
 
 @interface wbStatus : NSObject<MJKeyValue>
 
+/**
+ *  转发微博
+ */
 @property (nonatomic, strong) wbStatus *retweeted_status;
+
+/**
+ *  转发微博昵称
+ */
+@property (nonatomic, copy) NSString *retweetName;
 
 /**
  *  用户

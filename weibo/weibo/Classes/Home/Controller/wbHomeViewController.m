@@ -58,6 +58,9 @@
     //设置tableView的背景色
     self.tableView.backgroundColor = [UIColor colorWithRed:245/255.0f green:245/255.0f blue:245/255.0f alpha:1.0f];
     
+    //取消分割线
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
     //设置导航栏
     [self setupNavigationBar];
     
