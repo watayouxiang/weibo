@@ -9,8 +9,8 @@
 #import "wbOriginalView.h"
 #import "wbStatus.h"
 #import "wbStatusFrame.h"
-
 #import "UIImageView+WebCache.h"
+#import "wbPhotosView.h"
 
 @interface wbOriginalView ()
 
@@ -26,6 +26,8 @@
 @property (nonatomic, weak) UILabel *sourceView;
 //正文
 @property (nonatomic, weak) UILabel *textView;
+//配图
+@property (nonatomic, weak) wbPhotosView *photosView;
 
 @end
 
@@ -81,6 +83,11 @@
     textView.numberOfLines = 0;
     [self addSubview:textView];
     _textView = textView;
+    
+    //配图
+    wbPhotosView *photosView = [[wbPhotosView alloc] init];
+    [self addSubview:photosView];
+    _photosView = photosView;
 }
 
 #pragma mark - 重写StatusF的赋值方法
@@ -121,6 +128,9 @@
     
     //正文
     _textView.text = status.text;
+    
+    //配图
+    _photosView.pic_urls = status.pic_urls;
 }
 
 - (void)setupFrame{
@@ -153,6 +163,9 @@
     
     //正文
     _textView.frame = _statusF.originalTextFrame;
+    
+    //配图
+    _photosView.frame = _statusF.originalPhotosFrame;
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "wbRetweetView.h"
 #import "wbStatus.h"
 #import "wbStatusFrame.h"
+#import "wbPhotosView.h"
 
 @interface wbRetweetView ()
 
@@ -16,6 +17,8 @@
 @property (nonatomic, weak) UILabel *nameView;
 //正文
 @property (nonatomic, weak) UILabel *textView;
+//配图
+@property (nonatomic, weak) wbPhotosView *photosView;
 
 @end
 
@@ -51,6 +54,11 @@
     [self addSubview:textView];
     _textView = textView;
     
+    //配图
+    wbPhotosView *photosView = [[wbPhotosView alloc] init];
+    [self addSubview:photosView];
+    _photosView = photosView;
+    
 }
 
 #pragma mark - 重写statusF的赋值方法
@@ -73,6 +81,9 @@
     
     //正文
     _textView.text = status.retweeted_status.text;
+    
+    //配图
+    _photosView.pic_urls = status.retweeted_status.pic_urls;
 }
 
 -(void)setupFrame{
@@ -81,6 +92,9 @@
     
     //正文frame
     _textView.frame = _statusF.retweetTextFrame;
+    
+    //配图
+    _photosView.frame = _statusF.retweetPhotosFrame;
 }
 
 @end
