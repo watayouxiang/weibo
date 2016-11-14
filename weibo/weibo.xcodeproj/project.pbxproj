@@ -16,8 +16,6 @@
 		BB186E011DC97F640063A3DD /* wbUserResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BB186E001DC97F640063A3DD /* wbUserResult.m */; };
 		BB186E041DC97FBB0063A3DD /* wbUserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BB186E031DC97FBB0063A3DD /* wbUserTool.m */; };
 		BB186E061DC985170063A3DD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB186E051DC985170063A3DD /* AVFoundation.framework */; };
-		BB186E0A1DC9861D0063A3DD /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB186E081DC9861D0063A3DD /* silence.mp3 */; };
-		BB186E0B1DC9861D0063A3DD /* 爸比我要喝奶奶.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB186E091DC9861D0063A3DD /* 爸比我要喝奶奶.mp3 */; };
 		BB4C7CD21DC2014000FCDEDA /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C7C771DC2014000FCDEDA /* AFHTTPRequestOperation.m */; };
 		BB4C7CD31DC2014000FCDEDA /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C7C791DC2014000FCDEDA /* AFHTTPRequestOperationManager.m */; };
 		BB4C7CD41DC2014000FCDEDA /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C7C7B1DC2014000FCDEDA /* AFHTTPSessionManager.m */; };
@@ -61,6 +59,8 @@
 		BB4C7CFA1DC2014000FCDEDA /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C7CCD1DC2014000FCDEDA /* UIImageView+HighlightedWebCache.m */; };
 		BB4C7CFB1DC2014000FCDEDA /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C7CCF1DC2014000FCDEDA /* UIImageView+WebCache.m */; };
 		BB4C7CFC1DC2014000FCDEDA /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4C7CD11DC2014000FCDEDA /* UIView+WebCacheOperation.m */; };
+		BB5213D21DD9BD5D00B7D276 /* silence.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB5213CD1DD9BD5D00B7D276 /* silence.mp3 */; };
+		BB5213D31DD9BD5D00B7D276 /* 爸比我要喝奶奶.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB5213CE1DD9BD5D00B7D276 /* 爸比我要喝奶奶.mp3 */; };
 		BB61956D1DCC29CE0038664A /* wbStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BB61956C1DCC29CE0038664A /* wbStatusFrame.m */; };
 		BB6195711DCC2F780038664A /* wbStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6195701DCC2F780038664A /* wbStatusCell.m */; };
 		BB6195741DCC31C30038664A /* wbOriginalView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6195731DCC31C30038664A /* wbOriginalView.m */; };
@@ -132,8 +132,6 @@
 		BB186E021DC97FBB0063A3DD /* wbUserTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbUserTool.h; sourceTree = "<group>"; };
 		BB186E031DC97FBB0063A3DD /* wbUserTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbUserTool.m; sourceTree = "<group>"; };
 		BB186E051DC985170063A3DD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		BB186E081DC9861D0063A3DD /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
-		BB186E091DC9861D0063A3DD /* 爸比我要喝奶奶.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "爸比我要喝奶奶.mp3"; sourceTree = "<group>"; };
 		BB4C7C761DC2014000FCDEDA /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		BB4C7C771DC2014000FCDEDA /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		BB4C7C781DC2014000FCDEDA /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -222,6 +220,8 @@
 		BB4C7CCF1DC2014000FCDEDA /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		BB4C7CD01DC2014000FCDEDA /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		BB4C7CD11DC2014000FCDEDA /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		BB5213CD1DD9BD5D00B7D276 /* silence.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = silence.mp3; sourceTree = "<group>"; };
+		BB5213CE1DD9BD5D00B7D276 /* 爸比我要喝奶奶.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "爸比我要喝奶奶.mp3"; sourceTree = "<group>"; };
 		BB61956B1DCC29CE0038664A /* wbStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbStatusFrame.h; sourceTree = "<group>"; };
 		BB61956C1DCC29CE0038664A /* wbStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbStatusFrame.m; sourceTree = "<group>"; };
 		BB61956F1DCC2F780038664A /* wbStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbStatusCell.h; sourceTree = "<group>"; };
@@ -397,16 +397,6 @@
 			path = Result;
 			sourceTree = "<group>";
 		};
-		BB186E071DC9861D0063A3DD /* Mp3 */ = {
-			isa = PBXGroup;
-			children = (
-				BB186E081DC9861D0063A3DD /* silence.mp3 */,
-				BB186E091DC9861D0063A3DD /* 爸比我要喝奶奶.mp3 */,
-			);
-			name = Mp3;
-			path = "../../../../Movies/微博项目/微博04/代码/04-账号未读数工具类封装/传智微博/Mp3";
-			sourceTree = "<group>";
-		};
 		BB4C7C741DC2014000FCDEDA /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +531,15 @@
 				BB4C7CD11DC2014000FCDEDA /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		BB5213C91DD9BD5D00B7D276 /* Mp3 */ = {
+			isa = PBXGroup;
+			children = (
+				BB5213CD1DD9BD5D00B7D276 /* silence.mp3 */,
+				BB5213CE1DD9BD5D00B7D276 /* 爸比我要喝奶奶.mp3 */,
+			);
+			path = Mp3;
 			sourceTree = "<group>";
 		};
 		BB61956A1DCC29A50038664A /* ViewModel */ = {
@@ -752,7 +751,7 @@
 		BBF001761DB5F6DA0099BD50 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BB186E071DC9861D0063A3DD /* Mp3 */,
+				BB5213C91DD9BD5D00B7D276 /* Mp3 */,
 				BBF001871DB5F6DA0099BD50 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -1096,13 +1095,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB186E0A1DC9861D0063A3DD /* silence.mp3 in Resources */,
 				BBF001861DB5F6DA0099BD50 /* LaunchScreen.storyboard in Resources */,
 				BBF001831DB5F6DA0099BD50 /* Assets.xcassets in Resources */,
 				BB4C7CE51DC2014000FCDEDA /* MJRefresh.bundle in Resources */,
-				BB186E0B1DC9861D0063A3DD /* 爸比我要喝奶奶.mp3 in Resources */,
 				BB4C7CDC1DC2014000FCDEDA /* MBProgressHUD.bundle in Resources */,
+				BB5213D21DD9BD5D00B7D276 /* silence.mp3 in Resources */,
 				BBF860CA1DD5C524001F2E87 /* MJPhotoBrowser.bundle in Resources */,
+				BB5213D31DD9BD5D00B7D276 /* 爸比我要喝奶奶.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
