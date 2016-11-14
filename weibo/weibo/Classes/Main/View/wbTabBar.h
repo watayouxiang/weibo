@@ -15,6 +15,9 @@
 @optional
 -(void)tabBar:(wbTabBar *)tabBar didClickButton:(NSInteger)index;
 
+@optional
+-(void)tabBarDidClickPlusButton:(wbTabBar *)tabBar;
+
 @end
 
 @interface wbTabBar : UIView

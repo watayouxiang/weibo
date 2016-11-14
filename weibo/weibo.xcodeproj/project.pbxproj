@@ -100,6 +100,7 @@
 		BBF001B31DB603E60099BD50 /* UIImage+wbImage.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF001B21DB603E60099BD50 /* UIImage+wbImage.m */; };
 		BBF001B61DB6051D0099BD50 /* wbTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF001B51DB6051D0099BD50 /* wbTabBar.m */; };
 		BBF001B91DB60B720099BD50 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF001B81DB60B720099BD50 /* UIKit.framework */; };
+		BBF75E811DD990870055CAB5 /* wbComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF75E801DD990870055CAB5 /* wbComposeViewController.m */; };
 		BBF8609D1DD5C2E9001F2E87 /* wbPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF8609C1DD5C2E9001F2E87 /* wbPhotoView.m */; };
 		BBF860A01DD5C435001F2E87 /* wbPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF8609F1DD5C435001F2E87 /* wbPhotosView.m */; };
 		BBF860C91DD5C524001F2E87 /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF860BB1DD5C524001F2E87 /* MJPhoto.m */; };
@@ -298,6 +299,8 @@
 		BBF001B41DB6051D0099BD50 /* wbTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbTabBar.h; sourceTree = "<group>"; };
 		BBF001B51DB6051D0099BD50 /* wbTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbTabBar.m; sourceTree = "<group>"; };
 		BBF001B81DB60B720099BD50 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BBF75E7F1DD990870055CAB5 /* wbComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbComposeViewController.h; sourceTree = "<group>"; };
+		BBF75E801DD990870055CAB5 /* wbComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbComposeViewController.m; sourceTree = "<group>"; };
 		BBF8609B1DD5C2E9001F2E87 /* wbPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbPhotoView.h; sourceTree = "<group>"; };
 		BBF8609C1DD5C2E9001F2E87 /* wbPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wbPhotoView.m; sourceTree = "<group>"; };
 		BBF8609E1DD5C435001F2E87 /* wbPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wbPhotosView.h; sourceTree = "<group>"; };
@@ -761,6 +764,7 @@
 				BBDD12B11DC3303D0007F145 /* Tool */,
 				BBE637E21DC191CC009C0CDC /* OAuth */,
 				BB79A6E21DC079FD00E3072D /* NewFeature */,
+				BBF75E7D1DD990640055CAB5 /* Compose */,
 				BBF0018F1DB5F8ED0099BD50 /* Discover */,
 				BBF001931DB5F8ED0099BD50 /* Home */,
 				BBF001971DB5F8ED0099BD50 /* Main */,
@@ -986,6 +990,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BBF75E7D1DD990640055CAB5 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				BBF75E7E1DD990640055CAB5 /* Controller */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		BBF75E7E1DD990640055CAB5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BBF75E7F1DD990870055CAB5 /* wbComposeViewController.h */,
+				BBF75E801DD990870055CAB5 /* wbComposeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		BBF860B91DD5C524001F2E87 /* MJPhotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -1202,6 +1223,7 @@
 				BBDD12B91DC3320C0007F145 /* wbRootTool.m in Sources */,
 				BBE38CC41DB9B60700BB4F35 /* UIBarButtonItem+wbItem.m in Sources */,
 				BBE38CC11DB8BD5500BB4F35 /* wbTabBarButton.m in Sources */,
+				BBF75E811DD990870055CAB5 /* wbComposeViewController.m in Sources */,
 				BBE38CCA1DB9BC7300BB4F35 /* wbCover.m in Sources */,
 				BB4C7CF11DC2014000FCDEDA /* SDWebImageDecoder.m in Sources */,
 				BBE38CCD1DB9C06800BB4F35 /* wbPopMenu.m in Sources */,

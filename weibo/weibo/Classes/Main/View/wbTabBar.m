@@ -68,15 +68,23 @@
         [btn setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button"] forState:UIControlStateNormal];
         [btn setBackgroundImage:[UIImage imageNamed:@"tabbar_compose_button_highlighted"] forState:UIControlStateHighlighted];
         
-        // 默认按钮的尺寸跟背景图片一样大
-        // sizeToFit:默认会根据按钮的背景图片或者image和文字计算出按钮的最合适的尺寸
+        //默认按钮的尺寸跟背景图片一样大
+        //sizeToFit:默认会根据按钮的背景图片或者image和文字计算出按钮的最合适的尺寸
         [btn sizeToFit];
+        [btn addTarget:self action:@selector(plusClick) forControlEvents:UIControlEventTouchUpInside];
         
         _plusButton = btn;
         
         [self addSubview:_plusButton];
     }
     return _plusButton;
+}
+
+#pragma mark - 点击加号按钮时候调用
+- (void)plusClick{
+    if ([_delegate respondsToSelector:@selector(tabBarDidClickPlusButton:)]) {
+        [_delegate tabBarDidClickPlusButton:self];
+    }
 }
 
 #pragma mark - 布局子控件

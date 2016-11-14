@@ -20,6 +20,8 @@
 #import "wbUserTool.h"
 #import "wbUserResult.h"
 
+#import "wbComposeViewController.h"
+
 @interface wbTabBarController ()<wbTabBarDelegate>
 
 @property (nonatomic, strong) NSMutableArray *items;
@@ -101,6 +103,15 @@
     }
     
     self.selectedIndex = index;
+}
+
+#pragma mark - 点击加号按钮的时候调用（wbTabBar的代理方法）
+- (void)tabBarDidClickPlusButton:(wbTabBar *)tabBar{
+    //创建发送微博控制器
+    wbComposeViewController *composeVc = [[wbComposeViewController alloc] init];
+    wbNavigationController *nav = [[wbNavigationController alloc] initWithRootViewController:composeVc];
+    
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 #pragma mark - 设置所有子控制器
