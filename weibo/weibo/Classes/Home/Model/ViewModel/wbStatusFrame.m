@@ -105,7 +105,7 @@
     //转发微博的用户昵称
     CGFloat nameX = wbStatusCellMargin;
     CGFloat nameY = nameX;
-    CGSize nameSize = [_status.retweeted_status.user.name sizeWithFont:wbNameFont];
+    CGSize nameSize = [_status.retweetName sizeWithFont:wbNameFont];
     _retweetNameFrame = (CGRect){{nameX,nameY},nameSize};
     
     //转发微博的正文
